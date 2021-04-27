@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\14791\Github\learn\BianYi\main.cpp(11,20): warning C4018: “<”: 有符号/无符号不匹配
+  BianYi.vcxproj -> C:\Users\14791\Github\learn\BianYi\Debug\BianYi.exe

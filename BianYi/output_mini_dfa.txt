@@ -1,0 +1,9 @@
+digraph abc{
+0[fontcolor=white][shape=circle];
+1[fontcolor=white][shape=circle];
+1[fontcolor=black][label=begin];
+0[fontcolor=black][label=acc];
+1->1[label=a];
+1->1[label=b];
+1->0[label=c];
+}

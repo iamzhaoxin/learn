@@ -1,0 +1,11 @@
+char ch = getChar();
+while(ch ==a||ch ==b)
+{
+ch = getChar();
+}
+if( ch ==c)
+{
+Done();
+}
+else
+error(1);
