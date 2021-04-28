@@ -8,6 +8,7 @@
 import pymysql
 from itemadapter import ItemAdapter
 
+
 class Pipeline:
     def __init__(self):
         # 各种参数
@@ -23,7 +24,7 @@ class Pipeline:
         self.conn = pymysql.connect(**params)
         # 调用cursor方法
         self.cursor = self.conn.cursor()
-        self.sql=None
+        self.sql = None
 
     def process_item(self, item, spider):
         # 运行
@@ -32,9 +33,19 @@ class Pipeline:
                         INSERT INTO museum.Collection (col_id, mus_id, col_name, col_era, col_info, mus_name, col_picture)VALUES (%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE mus_id=%s, col_name=%s, col_era=%s, col_info=%s, mus_name=%s, col_picture=%s;
                         """
             self.cursor.execute(self.sql, (item['col_id'], item['mus_id'], item['col_name'], item['col_era'],
-                                       item['col_info'], item['mus_name'], item['col_picture'], item['mus_id'],
-                                       item['col_name'], item['col_era'],
-                                       item['col_info'], item['mus_name'], item['col_picture']))
+                                           item['col_info'], item['mus_name'], item['col_picture'], item['mus_id'],
+                                           item['col_name'], item['col_era'],
+                                           item['col_info'], item['mus_name'], item['col_picture']))
+            # 存入数据库
+            self.conn.commit()
+        else:
+            self.sql = """
+                       INSERT INTO museum.Exhibition(exh_id, exh_name, mus_id, mus_name, exh_info, exh_picture, exh_time) VALUES (%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE exh_name=%s, mus_id=%s, mus_name=%s, exh_info=%s, exh_picture=%s, exh_time=%s;
+                       """
+            self.cursor.execute(self.sql, (item['exh_id'], item['exh_name'], item['mus_id'], item['mus_name'],
+                                           item['exh_info'], item['exh_picture'], item['exh_time'], item['exh_name'],
+                                           item['mus_id'], item['mus_name'],
+                                           item['exh_info'], item['exh_picture'], item['exh_time']))
             # 存入数据库
             self.conn.commit()
         return item

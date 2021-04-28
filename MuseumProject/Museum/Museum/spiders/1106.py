@@ -1,8 +1,4 @@
-import scrapy
-from scrapy import item
-
 from ..items import *
-
 
 class Gmc1103Spider(scrapy.Spider):
     name = '1106'
@@ -27,6 +23,7 @@ class Gmc1103Spider(scrapy.Spider):
             exh_id += 1000
             yield scrapy.Request(url=exh_url, callback=self.exh_parse, meta={'exh_id': exh_id})
 
+
     # 藏品列表
     def cols_parse(self, response):
         col_urls = response.xpath('/html/body/div[3]/div[2]/div[2]/div[1]/dl//@href').extract()
@@ -39,6 +36,7 @@ class Gmc1103Spider(scrapy.Spider):
     # 单个藏品
     def col_parse(self, response):
         item = Item()
+        item['exh_id'] = item['exh_name'] = item['exh_info'] = item['exh_picture'] = item['exh_time'] = ''
         item['mus_name'] = '北京鲁迅博物馆'
         item['mus_id'] = 1106
         item['col_id'] = response.meta['col_id']
@@ -48,12 +46,24 @@ class Gmc1103Spider(scrapy.Spider):
         item['col_era'] = '近代'
         item['col_picture'] = "http://www.luxunmuseum.com.cn/" + \
                               response.xpath('/html/body/div[3]/div[2]/div[2]//@src')[0].extract()
-        item['exh_id'] = item['exh_name'] = item['exh_info'] = item['exh_picture'] = item['exh_time'] = ''
-        print(item['col_picture'])
         yield item
+        print("正在爬取藏品 "+item['col_name']+" ing")
         return
 
     # 展览列表
     def exh_parse(self, response):
-        print(response)
+        item = Item()
+        item['col_id'] = item['col_name'] = item['col_info'] = item['col_era'] = item['col_picture'] = ''
+        item['mus_name'] = '北京鲁迅博物馆'
+        item['mus_id'] = 1106
+        exh_list = response.xpath('/html/body/div[3]/div[2]/div[2]/div[1]/div[@class="list_chenlie"]')
+        for exh in exh_list:
+            response.meta['exh_id'] += 1
+            item['exh_id'] = response.meta['exh_id']
+            item['exh_name'] = exh.xpath('.//a/text()')[0].extract()
+            item['exh_info'] = exh.xpath('.//dd/text()')[0].extract()
+            item['exh_picture'] = "http://www.luxunmuseum.com.cn/"+exh.xpath('.//img/@src')[0].extract()
+            item['exh_time'] = 'None'
+            yield item
+            print("正在爬取展览 "+item['exh_name']+" ing")
         return

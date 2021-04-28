@@ -1,19 +1,34 @@
 from ..items import *
-# TODO 博物馆网站维护中
+
+# 中国国家博物馆
 class Gmc1103Spider(scrapy.Spider):
-    name = '1103'
-    start_urls = ['https://www.gmc.org.cn/']
+    name = '1112'
+    start_urls = ['http://www.chnmuseum.cn/']
     custom_settings = {
         'ITEM_PIPELINES': {'Museum.pipelines.Pipeline': 300}
     }
 
-    # def parse(self, response, **kwargs):
-    #     # 藏品
-    #     col_id = 110610000
-    #     for i in range(1, 4):
-    #         col_id += 1000
-    #         col_url = 'http://www.luxunmuseum.com.cn/guancangjingpin/list_19_' + str(i) + '.htm'
-    #         yield scrapy.Request(url=col_url, callback=self.cols_parse, meta={'col_id': col_id})
+    def parse(self, response, **kwargs):
+        print("start 1112")
+        # 藏品
+        col_id = 111210000
+        col_urls = ['http://www.chnmuseum.cn/zp/zpml/kgdjp/', 'http://www.chnmuseum.cn/zp/zpml/gmww/',
+                    'http://www.chnmuseum.cn/zp/zpml/gzhww/', 'http://www.chnmuseum.cn/zp/zpml/hb/',
+                    'http://www.chnmuseum.cn/zp/zpml/mzmsww/', 'http://www.chnmuseum.cn/zp/zpml/gjwxbt/',
+                    'http://www.chnmuseum.cn/zp/zpml/wgwwcp/', 'http://www.chnmuseum.cn/zp/zpml/ysp/',
+                    'http://www.chnmuseum.cn/zp/zpml/csp/'
+                    ]
+        for col_url in col_urls:
+            col_id += 1000
+            for i in range(0, 16):
+                if i == 0:
+                    s = ""
+                else:
+                    s = "index_" + str(i) + ".shtml"
+                col_url = col_url + s
+                col_id += 100
+                print(col_url)
+    #             yield scrapy.Request(url=col_url, callback=self.cols_parse, meta={'col_id': col_id})
     #
     #     # 展览
     #     exh_id = 110610000
@@ -46,7 +61,7 @@ class Gmc1103Spider(scrapy.Spider):
     #     item['col_picture'] = "http://www.luxunmuseum.com.cn/" + \
     #                           response.xpath('/html/body/div[3]/div[2]/div[2]//@src')[0].extract()
     #     yield item
-    #     print("正在爬取藏品 "+item['col_name']+" ing")
+    #     print("正在爬取藏品 " + item['col_name'] + " ing")
     #     return
     #
     # # 展览列表
@@ -61,8 +76,8 @@ class Gmc1103Spider(scrapy.Spider):
     #         item['exh_id'] = response.meta['exh_id']
     #         item['exh_name'] = exh.xpath('.//a/text()')[0].extract()
     #         item['exh_info'] = exh.xpath('.//dd/text()')[0].extract()
-    #         item['exh_picture'] = "http://www.luxunmuseum.com.cn/"+exh.xpath('.//img/@src')[0].extract()
+    #         item['exh_picture'] = "http://www.luxunmuseum.com.cn/" + exh.xpath('.//img/@src')[0].extract()
     #         item['exh_time'] = 'None'
     #         yield item
-    #         print("正在爬取展览 "+item['exh_name']+" ing")
+    #         print("正在爬取展览 " + item['exh_name'] + " ing")
     #     return
