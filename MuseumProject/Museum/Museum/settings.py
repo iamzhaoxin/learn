@@ -66,6 +66,7 @@ LOG_LEVEL = 'ERROR'
 ITEM_PIPELINES = {
     'Museum.pipelines.ExhibitionPipeline': 300,
     'Museum.pipelines.CollectionPipeline': 300,
+    'Museum.pipelines.Pipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
