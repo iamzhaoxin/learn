@@ -13,10 +13,10 @@ SPIDER_MODULES = ['Museum.spiders']
 NEWSPIDER_MODULE = 'Museum.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'
+# USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = 'False'
+ROBOTSTXT_OBEY = False
 
 LOG_LEVEL = 'ERROR'
 
@@ -32,16 +32,21 @@ LOG_LEVEL = 'ERROR'
 # CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-# COOKIES_ENABLED = False
+COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 # TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
-# DEFAULT_REQUEST_HEADERS = {
-#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-#   'Accept-Language': 'en',
-# }
+DEFAULT_REQUEST_HEADERS = {
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'accept-encoding': 'gzip, deflate, br',
+    'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8',
+    'cache-control': 'no-cache',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, '
+                  'like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+    # 'Cookie': '__jsluid_h=f5ab4be0ea1e74bd3fddfecb18515d18; _trs_uv=ko25g03p_2797_1buo; _trs_ua_s_1=ko25g03p_2797_jdet; Hm_lvt_d8512e191052092ef1dd135588660448=1619656135; Hm_lpvt_d8512e191052092ef1dd135588660448=1619656706; __jsl_clearance=1619657544.049|0|Qn5Z8xFKWAkLNaApR%2BQk49YnUqk%3D'
+}
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html

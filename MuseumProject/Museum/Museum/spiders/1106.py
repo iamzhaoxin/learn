@@ -1,6 +1,6 @@
 from ..items import *
 
-class Gmc1103Spider(scrapy.Spider):
+class M1106(scrapy.Spider):
     name = '1106'
     start_urls = ['http://www.luxunmuseum.com.cn/']
     custom_settings = {

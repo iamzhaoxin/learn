@@ -1,6 +1,6 @@
 from ..items import *
 # TODO 博物馆网站维护中
-class Gmc1103Spider(scrapy.Spider):
+class M1103(scrapy.Spider):
     name = '1103'
     start_urls = ['https://www.gmc.org.cn/']
     custom_settings = {

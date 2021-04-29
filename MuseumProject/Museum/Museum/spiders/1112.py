@@ -1,7 +1,9 @@
 from ..items import *
 
-# 中国国家博物馆
-class Gmc1103Spider(scrapy.Spider):
+
+# TODO 返回状态521
+class M1112(scrapy.Spider):
+    print("start 中国国家博物馆")
     name = '1112'
     start_urls = ['http://www.chnmuseum.cn/']
     custom_settings = {
@@ -9,7 +11,6 @@ class Gmc1103Spider(scrapy.Spider):
     }
 
     def parse(self, response, **kwargs):
-        print("start 1112")
         # 藏品
         col_id = 111210000
         col_urls = ['http://www.chnmuseum.cn/zp/zpml/kgdjp/', 'http://www.chnmuseum.cn/zp/zpml/gmww/',
