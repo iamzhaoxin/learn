@@ -1,20 +1,26 @@
 from ..items import *
 
-class M1106(scrapy.Spider):
-    name = '1106'
-    start_urls = ['http://www.luxunmuseum.com.cn/']
+
+class M1114(scrapy.Spider):
+    name = '1114'
+    start_urls = ['http://www.pgm.org.cn/']
     custom_settings = {
         'ITEM_PIPELINES': {'Museum.pipelines.Pipeline': 300}
     }
 
     def parse(self, response, **kwargs):
-        print("start 北京鲁迅博物馆")
+        print("start 文化部恭王府博物馆")
         # 藏品
-        col_id = 110610000
-        for i in range(1, 4):
-            col_id += 1000
-            col_url = 'http://www.luxunmuseum.com.cn/guancangjingpin/list_19_' + str(i) + '.htm'
-            yield scrapy.Request(url=col_url, callback=self.cols_parse, meta={'col_id': col_id})
+        col_id = 111410000
+        col_url = 'http://www.pgm.org.cn/pgm/gzjp/list'
+        for i in range(0, 5):
+            if i == 0:
+                s = ".shtml"
+            else:
+                s = "_" + str(i) + ".shtml"
+            _col_url = col_url + s
+            col_id += 100
+            yield scrapy.Request(url=_col_url, callback=self.cols_parse, meta={'col_id': col_id})
 
         # 展览
         exh_id = 110610000
@@ -22,10 +28,11 @@ class M1106(scrapy.Spider):
                     'http://www.luxunmuseum.com.cn/zhanlanhuigu/']
         for exh_url in exh_urls:
             exh_id += 1000
-            yield scrapy.Request(url=exh_url, callback=self.exh_parse, meta={'exh_id': exh_id})
-
+            # yield scrapy.Request(url=exh_url, callback=self.exh_parse, meta={'exh_id': exh_id})
 
     # 藏品列表
+
+    # TODO 解析并进入藏品详情页
     def cols_parse(self, response):
         col_urls = response.xpath('/html/body/div[3]/div[2]/div[2]/div[1]/dl//@href').extract()
         for col_url in col_urls:
@@ -48,7 +55,7 @@ class M1106(scrapy.Spider):
         item['col_picture'] = "http://www.luxunmuseum.com.cn/" + \
                               response.xpath('/html/body/div[3]/div[2]/div[2]//@src')[0].extract()
         yield item
-        print("正在爬取藏品 "+item['col_name']+" ing")
+        print("正在爬取藏品 " + item['col_name'] + " ing")
         return
 
     # 展览列表
@@ -63,8 +70,8 @@ class M1106(scrapy.Spider):
             item['exh_id'] = response.meta['exh_id']
             item['exh_name'] = exh.xpath('.//a/text()')[0].extract()
             item['exh_info'] = exh.xpath('.//dd/text()')[0].extract()
-            item['exh_picture'] = "http://www.luxunmuseum.com.cn/"+exh.xpath('.//img/@src')[0].extract()
+            item['exh_picture'] = "http://www.luxunmuseum.com.cn/" + exh.xpath('.//img/@src')[0].extract()
             item['exh_time'] = 'None'
             yield item
-            print("正在爬取展览 "+item['exh_name']+" ing")
+            print("正在爬取展览 " + item['exh_name'] + " ing")
         return

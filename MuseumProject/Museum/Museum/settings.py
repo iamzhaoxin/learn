@@ -69,8 +69,6 @@ DEFAULT_REQUEST_HEADERS = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'Museum.pipelines.ExhibitionPipeline': 300,
-    'Museum.pipelines.CollectionPipeline': 300,
     'Museum.pipelines.Pipeline': 300,
 }
 

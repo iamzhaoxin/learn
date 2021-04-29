@@ -3,7 +3,6 @@ from ..items import *
 
 # TODO 返回状态521
 class M1112(scrapy.Spider):
-    print("start 中国国家博物馆")
     name = '1112'
     start_urls = ['http://www.chnmuseum.cn/']
     custom_settings = {
@@ -11,6 +10,7 @@ class M1112(scrapy.Spider):
     }
 
     def parse(self, response, **kwargs):
+        print("start 中国国家博物馆")
         # 藏品
         col_id = 111210000
         col_urls = ['http://www.chnmuseum.cn/zp/zpml/kgdjp/', 'http://www.chnmuseum.cn/zp/zpml/gmww/',
@@ -26,10 +26,10 @@ class M1112(scrapy.Spider):
                     s = ""
                 else:
                     s = "index_" + str(i) + ".shtml"
-                col_url = col_url + s
+                _col_url = col_url + s
                 col_id += 100
-                print(col_url)
-    #             yield scrapy.Request(url=col_url, callback=self.cols_parse, meta={'col_id': col_id})
+                print(_col_url)
+    #             yield scrapy.Request(url=_col_url, callback=self.cols_parse, meta={'col_id': col_id})
     #
     #     # 展览
     #     exh_id = 110610000
