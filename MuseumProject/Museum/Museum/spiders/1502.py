@@ -2,14 +2,14 @@ import json
 from ..items import *
 
 # TODO 修改id和name
-id = 3603
-name = '八路军太行纪念馆'
+id = 1502
+name = '鄂尔多斯博物馆'
 
 
-class M3603(scrapy.Spider):
+class M1502(scrapy.Spider):
     # TODO 修改spider_name和start_urls
-    name = '3603'
-    start_urls = ['http://www.balujun.cn/']
+    name = '1502'
+    start_urls = ['http://why.ordosqyg.org.cn/Cloud/Module/Index/access/index.html']
     custom_settings = {
         'ITEM_PIPELINES': {'Museum.pipelines.Pipeline': 300}
     }
@@ -17,7 +17,7 @@ class M3603(scrapy.Spider):
     def parse(self, response, **kwargs):
         print("start " + name)
         col_id = int(str(id) + str(10000))
-        # TODO 进入藏品目录页 Working，网站维护中！！！！！！！！
+        # TODO 进入藏品目录页 Working，VR馆,仅有的展览图片无法加载
         for j in range(1, 9):
             col_url = 'http://api.bwy.hbdjdz.com:9903//primaryCollection/list4Page?id=' + str(j) + '&relicsType=' + str(
                 j) + '&pageNum='
