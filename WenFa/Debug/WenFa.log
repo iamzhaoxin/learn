@@ -1,24 +1,2 @@
-﻿  main.cpp
-  Grammar.cpp
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(112,20): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(130,20): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(78,6): warning C4101: “i”: 未引用的局部变量
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(164,16): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(257,19): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(317,38): warning C4018: “>=”: 有符号/无符号不匹配
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(378,9): warning C4101: “j”: 未引用的局部变量
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(522,17): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(576,16): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(580,16): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(582,17): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(630,17): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(718,19): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(777,38): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(800,39): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(766,9): warning C4101: “j”: 未引用的局部变量
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(850,18): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(857,12): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\14791\Github\learn\WenFa\Grammar.cpp(1072,17): warning C4018: “<”: 有符号/无符号不匹配
-  消除左递归.cpp
-  正在生成代码...
+﻿  Grammar.cpp
   WenFa.vcxproj -> C:\Users\14791\Github\learn\WenFa\Debug\WenFa.exe

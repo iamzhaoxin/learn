@@ -140,6 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LL1文法判断.cpp" />
+    <ClCompile Include="LL1方法完整程序.cpp" />
+    <ClCompile Include="LL1语法分析.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="上下文无关文法识别.cpp" />
     <ClCompile Include="Grammar.cpp" />

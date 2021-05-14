@@ -30,6 +30,12 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="LL1语法分析.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LL1方法完整程序.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Grammar.h">
