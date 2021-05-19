@@ -7,7 +7,7 @@ class M1106(scrapy.Spider):
         'ITEM_PIPELINES': {'Museum.pipelines.Pipeline': 300}
     }
 
-    def parse(self, response, **kwargs):
+    def parse(self, response):
         print("start 北京鲁迅博物馆")
         # 藏品
         col_id = 110610000

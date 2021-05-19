@@ -12,7 +12,7 @@ class DbConnection:
     )
     cursor = conn.cursor()
 
-    for i in range(16, 22):
+    for i in range(1714, 1719):
         conn.ping(reconnect=True)
         sql = "insert into museum.comments (aid,uid,mid,exhibitionstar,servicestar,environmentstar,general_comment,comment,picture) values(%s,%s,%s,%s,%s,%s,%s,%s,%s)"
         cursor.execute(sql, (i, 1, i, 2, 3, 3,3, "暂无评价","null"))
