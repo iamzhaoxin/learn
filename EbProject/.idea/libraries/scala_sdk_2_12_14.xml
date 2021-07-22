@@ -8,9 +8,9 @@
       </compiler-classpath>
     </properties>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.14.jar!/" />
-      <root url="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.12.14.jar!/" />
-      <root url="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.14-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/scala-library-2.12.142.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/scala-reflect-2.12.142.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/scala-library-2.12.14-sources2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

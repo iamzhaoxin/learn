@@ -1,8 +1,9 @@
 package dw.dws
 
+import ads.MySinkToRedis
+
 import java.text.SimpleDateFormat
 import java.util
-
 import com.alibaba.fastjson.{JSON, JSONArray, JSONObject}
 import modes.{CityOrder, TableObject}
 import myutils.{ConnHBase, SourceKafka}
@@ -21,6 +22,7 @@ import org.apache.flink.util.Collector
 import org.apache.hadoop.hbase.client.{Connection, HTable, Result, Scan}
 import org.apache.hadoop.hbase.util.Bytes
 import org.apache.hadoop.hbase.{Cell, TableName}
+import ads.MysqlSinkTest.MyJdbcSink
 
 
 /**
@@ -30,8 +32,8 @@ object OrderStatistics {
   def main(args: Array[String]): Unit = {
     val envSet: ExecutionEnvironment = ExecutionEnvironment.getExecutionEnvironment
     //    ExecutionEnvironment.
-        val envStream: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
-//    val envStream: StreamExecutionEnvironment = StreamExecutionEnvironment.createLocalEnvironmentWithWebUI(config = new Configuration())
+    val envStream: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
+    //    val envStream: StreamExecutionEnvironment = StreamExecutionEnvironment.createLocalEnvironmentWithWebUI(config = new Configuration())
     envStream.enableCheckpointing(1000)
     envStream.setStateBackend(new FsStateBackend("file:\\\tmp\\lucas"))
 
@@ -75,7 +77,7 @@ object OrderStatistics {
       }
     })
 
-//    hbaseData.print()
+    //    hbaseData.print()
 
     val areaList: List[tuple.Tuple2[String, String]] = hbaseData.collect().toList
 
@@ -155,6 +157,7 @@ object OrderStatistics {
       .timeWindow(Time.seconds(60 * 60), Time.minutes(1))
       .aggregate(new MyAggFunc(), new MyWindowFunc())
 
+    result.addSink(new MyJdbcSink).setParallelism(1)
     result.print()
 
 

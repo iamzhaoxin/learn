@@ -10,7 +10,7 @@ import redis.clients.jedis.Jedis
 /**
  * 自定义下沉器，下沉结果数据到Redis中
  */
-class MySinkToRedis extends RichSinkFunction[Tuple2[CityOrder, Long]] {
+class MySinkToRedis extends RichSinkFunction[(CityOrder, Long)] {
 
   var jedis: Jedis = null
 

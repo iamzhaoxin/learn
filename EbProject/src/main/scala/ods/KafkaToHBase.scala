@@ -17,7 +17,7 @@ object KafkaToHBase {
 
   def main(args: Array[String]): Unit = {
     val env = StreamExecutionEnvironment.getExecutionEnvironment
-    val kafkaConsumer = new SourceKafka().getKafkaSource("test710")
+    val kafkaConsumer = new SourceKafka().getKafkaSource("test")
     //    kafkaConsumer.setStartFromLatest()
     kafkaConsumer.setStartFromEarliest()
     val sourceStream = env.addSource(kafkaConsumer)
