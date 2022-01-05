@@ -1,5 +1,8 @@
 package basic.lambda;
 
+/**
+ * @author zhaoxin
+ */
 public class Lambda {
     public static void main(String[] args) {
         //初始

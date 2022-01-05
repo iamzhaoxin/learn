@@ -2,6 +2,9 @@ package basic.arrays;
 
 import java.util.Arrays;
 
+/**
+ * @author zhaoxin
+ */
 public class Comparator{
     public static void main(String[] args) {
         Integer[] a={12,34,15,36};
@@ -12,6 +15,6 @@ public class Comparator{
             }
         });
         //System.out.println(a);会输出地址
-        System.out.println(Arrays.toString(a));//[12, 15, 34, 36]
+        System.out.println(Arrays.toString(a));
     }
 }
