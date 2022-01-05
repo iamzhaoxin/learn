@@ -1,0 +1,4 @@
+2022-01-05 09:05:05.600 [main] DEBUG Logback.class - main开始执行
+2022-01-05 09:05:05.607 [main] INFO  Logback.class - 这是一条info日志
+2022-01-05 09:05:05.611 [main] TRACE Logback.class - b= 10
+2022-01-05 09:05:05.613 [main] ERROR Logback.class - 出现异常： java.lang.ArithmeticException: / by zero
