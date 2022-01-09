@@ -2,7 +2,6 @@ package com.itheima.run;
 
 import com.itheima.bean.Business;
 import com.itheima.bean.Customer;
-import com.itheima.bean.Movie;
 import com.itheima.bean.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
