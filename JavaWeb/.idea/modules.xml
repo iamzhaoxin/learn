@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DataBase/DataBase.iml" filepath="$PROJECT_DIR$/DataBase/DataBase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MavenMybatisDemo/MavenMybatisDemo.iml" filepath="$PROJECT_DIR$/MavenMybatisDemo/MavenMybatisDemo.iml" />
     </modules>
   </component>
 </project>

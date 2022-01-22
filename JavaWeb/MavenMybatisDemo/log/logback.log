@@ -1,0 +1,321 @@
+2022-01-22 16:48:16.000 [main] TRACE HelloWorld.class - i am just a trace
+2022-01-22 16:48:16.002 [main] DEBUG HelloWorld.class - i am a logger debug
+2022-01-22 16:48:16.002 [main] INFO  HelloWorld.class - i am a logger info
+2022-01-22 16:48:16.003 [main] WARN  HelloWorld.class - i am a logger warn
+2022-01-22 16:48:16.003 [main] ERROR HelloWorld.class - i am a logger error
+2022-01-22 16:48:22.322 [main] TRACE HelloWorld.class - i am just a trace
+2022-01-22 16:48:22.324 [main] DEBUG HelloWorld.class - i am a logger debug
+2022-01-22 16:48:22.324 [main] INFO  HelloWorld.class - i am a logger info
+2022-01-22 16:48:22.325 [main] WARN  HelloWorld.class - i am a logger warn
+2022-01-22 16:48:22.325 [main] ERROR HelloWorld.class - i am a logger error
+2022-01-22 17:16:23.616 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 17:16:23.637 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 17:16:23.637 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 17:16:23.637 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 17:16:23.638 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 17:16:23.707 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2022-01-22 17:16:24.242 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Created connection 2016949136.
+2022-01-22 17:16:24.242 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 17:16:24.259 [main] DEBUG test.selectAll - ==>  Preparing: select * from test.test_table;
+2022-01-22 17:16:24.296 [main] DEBUG test.selectAll - ==> Parameters: 
+2022-01-22 17:16:24.356 [main] TRACE test.selectAll - <==    Columns: id, money, password
+2022-01-22 17:16:24.357 [main] TRACE test.selectAll - <==        Row: 1, 555000.0, 123456
+2022-01-22 17:16:24.359 [main] TRACE test.selectAll - <==        Row: 2, 20400.0, 123456
+2022-01-22 17:16:24.359 [main] TRACE test.selectAll - <==        Row: 3, 300.0, 123456
+2022-01-22 17:16:24.359 [main] TRACE test.selectAll - <==        Row: 4, 400.0, 123456
+2022-01-22 17:16:24.359 [main] TRACE test.selectAll - <==        Row: 5, 600.0, 123456
+2022-01-22 17:16:24.360 [main] TRACE test.selectAll - <==        Row: 8, 600.0, 123456
+2022-01-22 17:16:24.360 [main] TRACE test.selectAll - <==        Row: 9, 900.0, 123456
+2022-01-22 17:16:24.360 [main] DEBUG test.selectAll - <==      Total: 7
+2022-01-22 17:16:24.363 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 17:16:24.378 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 17:16:24.378 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Returned connection 2016949136 to pool.
+2022-01-22 17:17:59.509 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 17:17:59.523 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 17:17:59.524 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 17:17:59.524 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 17:17:59.524 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 17:17:59.577 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2022-01-22 17:18:00.059 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Created connection 2016949136.
+2022-01-22 17:18:00.059 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 17:18:00.077 [main] DEBUG test.selectAll - ==>  Preparing: select * from test.test_table;
+2022-01-22 17:18:00.111 [main] DEBUG test.selectAll - ==> Parameters: 
+2022-01-22 17:18:00.159 [main] TRACE test.selectAll - <==    Columns: id, money, password
+2022-01-22 17:18:00.159 [main] TRACE test.selectAll - <==        Row: 1, 555000.0, 123456
+2022-01-22 17:18:00.161 [main] TRACE test.selectAll - <==        Row: 2, 20400.0, 123456
+2022-01-22 17:18:00.162 [main] TRACE test.selectAll - <==        Row: 3, 300.0, 123456
+2022-01-22 17:18:00.162 [main] TRACE test.selectAll - <==        Row: 4, 400.0, 123456
+2022-01-22 17:18:00.162 [main] TRACE test.selectAll - <==        Row: 5, 600.0, 123456
+2022-01-22 17:18:00.163 [main] TRACE test.selectAll - <==        Row: 8, 600.0, 123456
+2022-01-22 17:18:00.163 [main] TRACE test.selectAll - <==        Row: 9, 900.0, 123456
+2022-01-22 17:18:00.164 [main] DEBUG test.selectAll - <==      Total: 7
+2022-01-22 17:18:00.167 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 17:18:00.182 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 17:18:00.182 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Returned connection 2016949136 to pool.
+2022-01-22 22:38:46.724 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 22:38:46.746 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:38:46.746 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:38:46.746 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:38:46.747 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:38:46.827 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2022-01-22 22:38:47.538 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Created connection 2016949136.
+2022-01-22 22:38:47.539 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 22:38:47.558 [main] DEBUG test.selectAll - ==>  Preparing: select * from test.test_table;
+2022-01-22 22:38:47.600 [main] DEBUG test.selectAll - ==> Parameters: 
+2022-01-22 22:38:47.657 [main] TRACE test.selectAll - <==    Columns: id, money, password
+2022-01-22 22:38:47.658 [main] TRACE test.selectAll - <==        Row: 1, 555000.0, 123456
+2022-01-22 22:38:47.665 [main] TRACE test.selectAll - <==        Row: 2, 20400.0, 123456
+2022-01-22 22:38:47.666 [main] TRACE test.selectAll - <==        Row: 3, 300.0, 123456
+2022-01-22 22:38:47.666 [main] TRACE test.selectAll - <==        Row: 4, 400.0, 123456
+2022-01-22 22:38:47.667 [main] TRACE test.selectAll - <==        Row: 5, 600.0, 123456
+2022-01-22 22:38:47.667 [main] TRACE test.selectAll - <==        Row: 8, 600.0, 123456
+2022-01-22 22:38:47.667 [main] TRACE test.selectAll - <==        Row: 9, 900.0, 123456
+2022-01-22 22:38:47.668 [main] DEBUG test.selectAll - <==      Total: 7
+2022-01-22 22:38:47.672 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 22:38:47.688 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 22:38:47.688 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Returned connection 2016949136 to pool.
+2022-01-22 22:39:39.180 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 22:39:39.202 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:39:39.203 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:39:39.203 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:39:39.203 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:39:39.277 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2022-01-22 22:39:39.923 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Created connection 2016949136.
+2022-01-22 22:39:39.924 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 22:39:39.945 [main] DEBUG test.selectAll - ==>  Preparing: select * from test.test_table;
+2022-01-22 22:39:39.992 [main] DEBUG test.selectAll - ==> Parameters: 
+2022-01-22 22:39:40.054 [main] TRACE test.selectAll - <==    Columns: id, money, password
+2022-01-22 22:39:40.055 [main] TRACE test.selectAll - <==        Row: 1, 555000.0, 123456
+2022-01-22 22:39:40.059 [main] TRACE test.selectAll - <==        Row: 2, 20400.0, 123456
+2022-01-22 22:39:40.060 [main] TRACE test.selectAll - <==        Row: 3, 300.0, 123456
+2022-01-22 22:39:40.060 [main] TRACE test.selectAll - <==        Row: 4, 400.0, 123456
+2022-01-22 22:39:40.061 [main] TRACE test.selectAll - <==        Row: 5, 600.0, 123456
+2022-01-22 22:39:40.061 [main] TRACE test.selectAll - <==        Row: 8, 600.0, 123456
+2022-01-22 22:39:40.061 [main] TRACE test.selectAll - <==        Row: 9, 900.0, 123456
+2022-01-22 22:39:40.062 [main] DEBUG test.selectAll - <==      Total: 7
+2022-01-22 22:39:40.066 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 22:39:40.083 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 22:39:40.083 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Returned connection 2016949136 to pool.
+2022-01-22 22:39:51.756 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 22:39:51.778 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:39:51.778 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:39:51.778 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:39:51.778 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:39:51.848 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2022-01-22 22:39:52.468 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Created connection 2016949136.
+2022-01-22 22:39:52.469 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 22:39:52.489 [main] DEBUG test.selectAll - ==>  Preparing: select * from test.test_table;
+2022-01-22 22:39:52.524 [main] DEBUG test.selectAll - ==> Parameters: 
+2022-01-22 22:39:52.583 [main] TRACE test.selectAll - <==    Columns: id, money, password
+2022-01-22 22:39:52.584 [main] TRACE test.selectAll - <==        Row: 1, 555000.0, 123456
+2022-01-22 22:39:52.588 [main] TRACE test.selectAll - <==        Row: 2, 20400.0, 123456
+2022-01-22 22:39:52.588 [main] TRACE test.selectAll - <==        Row: 3, 300.0, 123456
+2022-01-22 22:39:52.588 [main] TRACE test.selectAll - <==        Row: 4, 400.0, 123456
+2022-01-22 22:39:52.589 [main] TRACE test.selectAll - <==        Row: 5, 600.0, 123456
+2022-01-22 22:39:52.589 [main] TRACE test.selectAll - <==        Row: 8, 600.0, 123456
+2022-01-22 22:39:52.590 [main] TRACE test.selectAll - <==        Row: 9, 900.0, 123456
+2022-01-22 22:39:52.590 [main] DEBUG test.selectAll - <==      Total: 7
+2022-01-22 22:39:52.594 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 22:39:52.610 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 22:39:52.610 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Returned connection 2016949136 to pool.
+2022-01-22 22:40:04.434 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 22:40:04.453 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:40:04.454 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:40:04.454 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:40:04.454 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:40:04.531 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2022-01-22 22:40:05.164 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Created connection 2016949136.
+2022-01-22 22:40:05.164 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 22:40:05.183 [main] DEBUG test.selectAll - ==>  Preparing: select * from test.test_table;
+2022-01-22 22:40:05.231 [main] DEBUG test.selectAll - ==> Parameters: 
+2022-01-22 22:40:05.305 [main] TRACE test.selectAll - <==    Columns: id, money, password
+2022-01-22 22:40:05.305 [main] TRACE test.selectAll - <==        Row: 1, 555000.0, 123456
+2022-01-22 22:40:05.308 [main] TRACE test.selectAll - <==        Row: 2, 20400.0, 123456
+2022-01-22 22:40:05.309 [main] TRACE test.selectAll - <==        Row: 3, 300.0, 123456
+2022-01-22 22:40:05.309 [main] TRACE test.selectAll - <==        Row: 4, 400.0, 123456
+2022-01-22 22:40:05.309 [main] TRACE test.selectAll - <==        Row: 5, 600.0, 123456
+2022-01-22 22:40:05.310 [main] TRACE test.selectAll - <==        Row: 8, 600.0, 123456
+2022-01-22 22:40:05.310 [main] TRACE test.selectAll - <==        Row: 9, 900.0, 123456
+2022-01-22 22:40:05.311 [main] DEBUG test.selectAll - <==      Total: 7
+2022-01-22 22:40:05.314 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 22:40:05.329 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 22:40:05.330 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Returned connection 2016949136 to pool.
+2022-01-22 22:40:20.892 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 22:40:20.913 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:40:20.913 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:40:20.913 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:40:20.913 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:40:20.991 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2022-01-22 22:40:21.610 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Created connection 2016949136.
+2022-01-22 22:40:21.610 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 22:40:21.629 [main] DEBUG test.selectAll - ==>  Preparing: select * from test.test_table;
+2022-01-22 22:40:21.669 [main] DEBUG test.selectAll - ==> Parameters: 
+2022-01-22 22:40:21.737 [main] TRACE test.selectAll - <==    Columns: id, money, password
+2022-01-22 22:40:21.738 [main] TRACE test.selectAll - <==        Row: 1, 555000.0, 123456
+2022-01-22 22:40:21.742 [main] TRACE test.selectAll - <==        Row: 2, 20400.0, 123456
+2022-01-22 22:40:21.742 [main] TRACE test.selectAll - <==        Row: 3, 300.0, 123456
+2022-01-22 22:40:21.743 [main] TRACE test.selectAll - <==        Row: 4, 400.0, 123456
+2022-01-22 22:40:21.743 [main] TRACE test.selectAll - <==        Row: 5, 600.0, 123456
+2022-01-22 22:40:21.743 [main] TRACE test.selectAll - <==        Row: 8, 600.0, 123456
+2022-01-22 22:40:21.744 [main] TRACE test.selectAll - <==        Row: 9, 900.0, 123456
+2022-01-22 22:40:21.744 [main] DEBUG test.selectAll - <==      Total: 7
+2022-01-22 22:40:21.747 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 22:40:21.764 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@78383390]
+2022-01-22 22:40:21.764 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Returned connection 2016949136 to pool.
+2022-01-22 22:40:43.506 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 22:40:43.526 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:40:43.526 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:40:43.526 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:40:43.526 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:40:43.598 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2022-01-22 22:40:44.277 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Created connection 1175631958.
+2022-01-22 22:40:44.277 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@4612b856]
+2022-01-22 22:40:44.296 [main] DEBUG test.selectAll - ==>  Preparing: select * from test.test_table;
+2022-01-22 22:40:44.340 [main] DEBUG test.selectAll - ==> Parameters: 
+2022-01-22 22:40:44.404 [main] TRACE test.selectAll - <==    Columns: id, money, password
+2022-01-22 22:40:44.404 [main] TRACE test.selectAll - <==        Row: 1, 555000.0, 123456
+2022-01-22 22:40:44.407 [main] TRACE test.selectAll - <==        Row: 2, 20400.0, 123456
+2022-01-22 22:40:44.407 [main] TRACE test.selectAll - <==        Row: 3, 300.0, 123456
+2022-01-22 22:40:44.407 [main] TRACE test.selectAll - <==        Row: 4, 400.0, 123456
+2022-01-22 22:40:44.408 [main] TRACE test.selectAll - <==        Row: 5, 600.0, 123456
+2022-01-22 22:40:44.408 [main] TRACE test.selectAll - <==        Row: 8, 600.0, 123456
+2022-01-22 22:40:44.409 [main] TRACE test.selectAll - <==        Row: 9, 900.0, 123456
+2022-01-22 22:40:44.409 [main] DEBUG test.selectAll - <==      Total: 7
+2022-01-22 22:40:44.413 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@4612b856]
+2022-01-22 22:40:44.427 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@4612b856]
+2022-01-22 22:40:44.427 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Returned connection 1175631958 to pool.
+2022-01-22 22:43:13.572 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 22:43:13.591 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:43:13.591 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:43:13.592 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:43:13.592 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:43:53.506 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 22:43:53.525 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:43:53.526 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:43:53.526 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:43:53.526 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:44:49.017 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 22:44:49.042 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:44:49.042 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:44:49.042 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:44:49.042 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:44:53.971 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 22:44:53.993 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:44:53.994 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:44:53.995 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:44:53.995 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:46:43.852 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 22:46:43.873 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:46:43.873 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:46:43.873 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:46:43.874 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:46:56.817 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 22:46:56.841 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:46:56.841 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:46:56.841 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:46:56.842 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:51:51.979 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 22:51:51.999 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:51:51.999 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:51:52.000 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:51:52.000 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:51:52.105 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2022-01-22 22:51:52.804 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Created connection 1979274004.
+2022-01-22 22:51:52.805 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@75f95314]
+2022-01-22 22:51:52.824 [main] DEBUG mapper.test_tableMapper.selectAll - ==>  Preparing: select * from test.test_table;
+2022-01-22 22:51:52.886 [main] DEBUG mapper.test_tableMapper.selectAll - ==> Parameters: 
+2022-01-22 22:51:52.971 [main] TRACE mapper.test_tableMapper.selectAll - <==    Columns: id, money, password
+2022-01-22 22:51:52.971 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 1, 555000.0, 123456
+2022-01-22 22:51:52.974 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 2, 20400.0, 123456
+2022-01-22 22:51:52.974 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 3, 300.0, 123456
+2022-01-22 22:51:52.974 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 4, 400.0, 123456
+2022-01-22 22:51:52.975 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 5, 600.0, 123456
+2022-01-22 22:51:52.975 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 8, 600.0, 123456
+2022-01-22 22:51:52.976 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 9, 900.0, 123456
+2022-01-22 22:51:52.976 [main] DEBUG mapper.test_tableMapper.selectAll - <==      Total: 7
+2022-01-22 22:51:53.003 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@75f95314]
+2022-01-22 22:51:53.019 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@75f95314]
+2022-01-22 22:51:53.020 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Returned connection 1979274004 to pool.
+2022-01-22 22:59:40.248 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 22:59:40.278 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:59:40.279 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:59:40.279 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:59:40.279 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:59:40.395 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2022-01-22 22:59:40.967 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Created connection 1979274004.
+2022-01-22 22:59:40.967 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@75f95314]
+2022-01-22 22:59:40.987 [main] DEBUG mapper.test_tableMapper.selectAll - ==>  Preparing: select * from test.test_table;
+2022-01-22 22:59:41.026 [main] DEBUG mapper.test_tableMapper.selectAll - ==> Parameters: 
+2022-01-22 22:59:41.075 [main] TRACE mapper.test_tableMapper.selectAll - <==    Columns: id, money, password
+2022-01-22 22:59:41.075 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 1, 555000.0, 123456
+2022-01-22 22:59:41.077 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 2, 20400.0, 123456
+2022-01-22 22:59:41.077 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 3, 300.0, 123456
+2022-01-22 22:59:41.078 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 4, 400.0, 123456
+2022-01-22 22:59:41.078 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 5, 600.0, 123456
+2022-01-22 22:59:41.078 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 8, 600.0, 123456
+2022-01-22 22:59:41.079 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 9, 900.0, 123456
+2022-01-22 22:59:41.079 [main] DEBUG mapper.test_tableMapper.selectAll - <==      Total: 7
+2022-01-22 22:59:41.088 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@75f95314]
+2022-01-22 22:59:41.104 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@75f95314]
+2022-01-22 22:59:41.104 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Returned connection 1979274004 to pool.
+2022-01-22 22:59:59.355 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 22:59:59.374 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:59:59.374 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:59:59.375 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:59:59.375 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 22:59:59.482 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2022-01-22 23:00:00.074 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Created connection 1979274004.
+2022-01-22 23:00:00.074 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@75f95314]
+2022-01-22 23:00:00.094 [main] DEBUG mapper.test_tableMapper.selectAll - ==>  Preparing: select * from test.test_table;
+2022-01-22 23:00:00.154 [main] DEBUG mapper.test_tableMapper.selectAll - ==> Parameters: 
+2022-01-22 23:00:00.220 [main] TRACE mapper.test_tableMapper.selectAll - <==    Columns: id, money, password
+2022-01-22 23:00:00.221 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 1, 555000.0, 123456
+2022-01-22 23:00:00.225 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 2, 20400.0, 123456
+2022-01-22 23:00:00.226 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 3, 300.0, 123456
+2022-01-22 23:00:00.226 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 4, 400.0, 123456
+2022-01-22 23:00:00.227 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 5, 600.0, 123456
+2022-01-22 23:00:00.228 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 8, 600.0, 123456
+2022-01-22 23:00:00.229 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 9, 900.0, 123456
+2022-01-22 23:00:00.229 [main] DEBUG mapper.test_tableMapper.selectAll - <==      Total: 7
+2022-01-22 23:00:00.240 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@75f95314]
+2022-01-22 23:00:00.257 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@75f95314]
+2022-01-22 23:00:00.257 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Returned connection 1979274004 to pool.
+2022-01-22 23:05:07.669 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2022-01-22 23:05:07.694 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 23:05:07.694 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 23:05:07.694 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 23:05:07.694 [main] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2022-01-22 23:05:07.702 [main] DEBUG org.apache.ibatis.io.VFS - Class not found: org.jboss.vfs.VFS
+2022-01-22 23:05:07.702 [main] DEBUG org.apache.ibatis.io.JBoss6VFS - JBoss 6 VFS API is not available in this environment.
+2022-01-22 23:05:07.703 [main] DEBUG org.apache.ibatis.io.VFS - Class not found: org.jboss.vfs.VirtualFile
+2022-01-22 23:05:07.704 [main] DEBUG org.apache.ibatis.io.VFS - VFS implementation org.apache.ibatis.io.JBoss6VFS is not valid in this environment.
+2022-01-22 23:05:07.705 [main] DEBUG org.apache.ibatis.io.VFS - Using VFS adapter org.apache.ibatis.io.DefaultVFS
+2022-01-22 23:05:07.706 [main] DEBUG org.apache.ibatis.io.DefaultVFS - Find JAR URL: file:/C:/Users/zhaox/Documents/IDEA%20Projects/learn/JavaWeb/MavenMybatisDemo/target/classes/mapper
+2022-01-22 23:05:07.706 [main] DEBUG org.apache.ibatis.io.DefaultVFS - Not a JAR: file:/C:/Users/zhaox/Documents/IDEA%20Projects/learn/JavaWeb/MavenMybatisDemo/target/classes/mapper
+2022-01-22 23:05:07.761 [main] DEBUG org.apache.ibatis.io.DefaultVFS - Reader entry: test_tableMapper.class
+2022-01-22 23:05:07.762 [main] DEBUG org.apache.ibatis.io.DefaultVFS - Reader entry: test_tableMapper.xml
+2022-01-22 23:05:07.763 [main] DEBUG org.apache.ibatis.io.DefaultVFS - Listing file:/C:/Users/zhaox/Documents/IDEA%20Projects/learn/JavaWeb/MavenMybatisDemo/target/classes/mapper
+2022-01-22 23:05:07.764 [main] DEBUG org.apache.ibatis.io.DefaultVFS - Find JAR URL: file:/C:/Users/zhaox/Documents/IDEA%20Projects/learn/JavaWeb/MavenMybatisDemo/target/classes/mapper/test_tableMapper.class
+2022-01-22 23:05:07.765 [main] DEBUG org.apache.ibatis.io.DefaultVFS - Not a JAR: file:/C:/Users/zhaox/Documents/IDEA%20Projects/learn/JavaWeb/MavenMybatisDemo/target/classes/mapper/test_tableMapper.class
+2022-01-22 23:05:07.766 [main] DEBUG org.apache.ibatis.io.DefaultVFS - Reader entry: ����   =   mapper/test_tableMapper  java/lang/Object 	selectAll ()Ljava/util/List; 	Signature ()Ljava/util/List<Lpojo/User;>; 
+2022-01-22 23:05:07.769 [main] DEBUG org.apache.ibatis.io.DefaultVFS - Find JAR URL: file:/C:/Users/zhaox/Documents/IDEA%20Projects/learn/JavaWeb/MavenMybatisDemo/target/classes/mapper/test_tableMapper.xml
+2022-01-22 23:05:07.769 [main] DEBUG org.apache.ibatis.io.DefaultVFS - Not a JAR: file:/C:/Users/zhaox/Documents/IDEA%20Projects/learn/JavaWeb/MavenMybatisDemo/target/classes/mapper/test_tableMapper.xml
+2022-01-22 23:05:07.770 [main] DEBUG org.apache.ibatis.io.DefaultVFS - Reader entry: <?xml version="1.0" encoding="UTF-8" ?>
+2022-01-22 23:05:07.771 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class mapper.test_tableMapper matches criteria [is assignable to Object]
+2022-01-22 23:05:07.887 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2022-01-22 23:05:08.534 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Created connection 2072313080.
+2022-01-22 23:05:08.535 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7b84fcf8]
+2022-01-22 23:05:08.553 [main] DEBUG mapper.test_tableMapper.selectAll - ==>  Preparing: select * from test.test_table;
+2022-01-22 23:05:08.591 [main] DEBUG mapper.test_tableMapper.selectAll - ==> Parameters: 
+2022-01-22 23:05:08.654 [main] TRACE mapper.test_tableMapper.selectAll - <==    Columns: id, money, password
+2022-01-22 23:05:08.655 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 1, 555000.0, 123456
+2022-01-22 23:05:08.658 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 2, 20400.0, 123456
+2022-01-22 23:05:08.658 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 3, 300.0, 123456
+2022-01-22 23:05:08.659 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 4, 400.0, 123456
+2022-01-22 23:05:08.659 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 5, 600.0, 123456
+2022-01-22 23:05:08.660 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 8, 600.0, 123456
+2022-01-22 23:05:08.660 [main] TRACE mapper.test_tableMapper.selectAll - <==        Row: 9, 900.0, 123456
+2022-01-22 23:05:08.661 [main] DEBUG mapper.test_tableMapper.selectAll - <==      Total: 7
+2022-01-22 23:05:08.681 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7b84fcf8]
+2022-01-22 23:05:08.697 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7b84fcf8]
+2022-01-22 23:05:08.697 [main] DEBUG o.a.i.d.pooled.PooledDataSource - Returned connection 2072313080 to pool.
