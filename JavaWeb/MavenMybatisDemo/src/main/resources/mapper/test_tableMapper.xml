@@ -2,11 +2,133 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!--
-    namespace:名称空间
--->
+
 <mapper namespace="mapper.test_tableMapper">
-    <select id="selectAll" resultType="pojo.User">
-        select * from test.test_table;
+
+    <!--
+        <select id="selectAll" resultType="pojo.User">
+            select * from test.test_table;
+        </select>
+        notice 如果数据库表的字段名和实体类的属性名不一样（数据库表可能是A_B命名，实体类的属性是aB命名），则不能自动封装数据
+        - 起别名
+            对不一样的列名起别名，让别名和实体类的属性名一致
+                <select id="selectAll" resultType="pojo.User">
+                    select id,money,password as passWord from test.test_table;
+                </select>
+            - 缺点
+                每次查询都要重新定义别名
+                - 方法：sql片段
+                    <sql id="test_table_column">id,money,password as password</sql>
+                    <select id="selectAll" resultType="pojo.User">
+                        select <include refid="test_table_column"/> from test.test_table;
+                    </select>
+                    - 缺点：不灵活
+        - ResultMap
+    -->
+    <resultMap id="test_tableMap" type="pojo.User">
+        <!-- id:对主键字段映射,column:数据表字段,property:实体类属性-->
+        <id column="id" property="id"/>
+        <!-- result：对一般字段映射-->
+        <result column="money" property="money"/>
+        <result column="password" property="password"/>
+    </resultMap>
+
+    <select id="selectAll" resultMap="test_tableMap">
+        select *
+        from test.test_table;
     </select>
+
+    <!--
+        notice Mybatis中参数占位符的两种方式
+        - #{}   会将参数替换为？    可以防止SQL注入
+        - ${}   直接拼接sql       可以被SQL注入
+
+        参数类型parameterType可以省略不写
+
+        notice 特殊字符（select * from table where id < 10;)
+        - 转义字符：（小于号 &lt;）
+        - CDATA区
+    -->
+    <select id="selectById" parameterType="int" resultMap="test_tableMap">
+        select *
+        from test.test_table
+        where id
+        <![CDATA[
+            <
+        ]]>
+        #{id};
+    </select>
+
+    <!--
+        notice 动态SQL
+        - if    test="逻辑表达式"
+            - 问题：第一个条件为空是，SQL是select * from table where and money>10000;
+            - 方法
+                - 恒等式
+                    where 1=1
+                    <if test="id!=null">
+                        and id &lt; #{id}
+                    </if>
+                    <if test="money!=null and money!=''">
+                        and money > #{money}
+                    </if>
+                - <where>标签 替换 where关键字
+        - choose(when,otherwise)    单条件动态查询，类似switch case default
+        - trim(where,set)
+        - foreach
+    -->
+    <select id="selectByCondition" resultMap="test_tableMap">
+        select *
+        from test.test_table
+        <where>
+            <if test="id!=null">
+                and id &lt; #{id}
+            </if>
+            <if test="money!=null and money!=''">
+                and money > #{money}
+            </if>
+            <if test="password!=null and password!=''">
+                and password like #{password};
+            </if>
+        </where>
+    </select>
+
+    <!--
+    notice 设置主键返回(有时用的自增主键，主键无法从前端获取)：useGeneratedKeys="true" keyProperty="id"
+    -->
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
+        insert into test.test_table(id, money, password)
+        VALUES (#{id}, #{money}, #{password});
+    </insert>
+
+    <!--动态修改-->
+    <update id="updateById">
+        update test.test_table
+        <set>
+            <if test="money!=null and money!=''">
+                money = #{money},
+            </if>
+            <if test="password!=null and password!=''">
+                password = #{password},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+    <!--
+        mybatis默认将数组参数，封装为Map集合
+        - 默认的Map集合名是array
+        - 可以在接口方法中通过@Param("ids")把Map集合命名为ids
+    -->
+    <delete id="deleteByIds">
+        delete
+        from test.test_table
+        where id
+        in (
+        <foreach collection="ids" item="id" separator=",">
+            #{id}
+        </foreach>
+        )
+    </delete>
+
 </mapper>

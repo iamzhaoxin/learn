@@ -2,7 +2,11 @@
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
 <configuration>
+    <!--
+    环境配置，可配置多个environment，通过修改default切换不同environment id
+    -->
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
@@ -15,11 +19,12 @@
             </dataSource>
         </environment>
     </environments>
-    <mappers>
-        <!--todo 加载sql配置文件-->
-<!--        <mapper resource="mapper/test_tableMapper.xml"/>-->
 
+    <!--todo 加载sql配置文件-->
+    <mappers>
+        <!--<mapper resource="mapper/test_tableMapper.xml"/>-->
         <!--如果用了Mapper代理方式，可以使用“包扫描”方法，加载包下的所有sql配置文件-->
         <package name="mapper"/>
     </mappers>
+
 </configuration>
