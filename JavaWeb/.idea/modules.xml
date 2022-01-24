@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DataBase/DataBase.iml" filepath="$PROJECT_DIR$/DataBase/DataBase.iml" />
       <module fileurl="file://$PROJECT_DIR$/MavenMybatisDemo/MavenMybatisDemo.iml" filepath="$PROJECT_DIR$/MavenMybatisDemo/MavenMybatisDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WebDesign/WebDesign.iml" filepath="$PROJECT_DIR$/WebDesign/WebDesign.iml" />
     </modules>
   </component>
 </project>
