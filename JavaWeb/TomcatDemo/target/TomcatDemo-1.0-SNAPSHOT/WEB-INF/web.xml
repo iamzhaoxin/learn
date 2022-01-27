@@ -9,7 +9,7 @@
     -->
     <servlet>
         <servlet-name>ServletXml</servlet-name>
-        <servlet-class>web.ServletXml</servlet-class>
+        <servlet-class>web.request.ServletXml</servlet-class>
     </servlet>
     <!--
         Servlet访问路径

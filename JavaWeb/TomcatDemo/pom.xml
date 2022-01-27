@@ -15,6 +15,7 @@
     </properties>
 
     <dependencies>
+        <!--Tomcat9的jar包-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -22,20 +23,63 @@
             <!--只在开发和测试环境有效，因为运行环境Tomcat中自带了这个包，重复导入会有冲突-->
             <scope>provided</scope>
         </dependency>
+
+        <!--工具类-->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+
+        <!--jsp jar-->
+        <dependency>
+            <groupId>tomcat</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>5.5.23</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--MySQL数据库-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.25</version>
+        </dependency>
+
+        <!--mybatis 依赖-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.9</version>
+        </dependency>
+
+        <!--JSTL标签库-->
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!--Tomcat 插件-->
-            <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
-                <configuration>
-                    <port>80</port>
-                    <!--<path>/</path>-->
-                </configuration>
-            </plugin>
+            <!--
+                Tomcat 插件
+                <plugin>
+                    <groupId>org.apache.tomcat.maven</groupId>
+                    <artifactId>tomcat7-maven-plugin</artifactId>
+                    <version>2.2</version>
+                    <configuration>
+                        <port>80</port>
+                        <path>/</path>
+                    </configuration>
+                </plugin>
+            -->
         </plugins>
     </build>
 
