@@ -1,6 +1,7 @@
 package mapper;
 
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import pojo.User;
 
@@ -37,7 +38,7 @@ public interface test_tableMapper {
     void updateById(User user);
 
     //批量删除
-    void deleteByIds(@Param("ids")int[] ids);
+    void deleteByIds(@Param("ids") int[] ids);
 
     /**
      * notice 通过注解完成SQL语句
@@ -49,5 +50,6 @@ public interface test_tableMapper {
      *    - 删除 @Delete
      */
     @Select("select * from test.test_table where id = #{id};")
+    @ResultMap("test_tableMap")
     User selectById2(int id);
 }

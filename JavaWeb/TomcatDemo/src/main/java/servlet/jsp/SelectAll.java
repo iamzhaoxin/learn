@@ -24,7 +24,7 @@ public class SelectAll extends HttpServlet {
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         List<User> users = userMapper.selectAll();
         request.setAttribute("users", users);
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/SelectAll.jsp").forward(request, response);
     }
 
     @Override

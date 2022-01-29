@@ -7,12 +7,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="TomcatDemo" />
+        <module name="CookieSession" />
         <module name="MavenMybatisDemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="CookieSession" target="17" />
       <module name="MavenMybatisDemo" target="17" />
       <module name="TomcatDemo" target="17" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="CookieSession" options="" />
+    </option>
   </component>
 </project>

@@ -3,7 +3,7 @@
 <%@ page import="org.apache.ibatis.annotations.Mapper" %>
 <%@ page import="mapper.UserMapper" %>
 <%@ page import="java.util.List" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="pojo.User" %>
 <%--
   Created by IntelliJ IDEA.
