@@ -3,8 +3,10 @@ package web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import service.GetUserById;
 import service.LoginVerify;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
@@ -26,7 +28,7 @@ public class Login extends HttpServlet {
     public static final Logger LOGGER = LoggerFactory.getLogger("Login.class");
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         //获取数据
         Integer id = Integer.valueOf((request.getParameter("id")).trim());
         String password = request.getParameter("password").trim();
@@ -37,7 +39,6 @@ public class Login extends HttpServlet {
 
         // 处理
         LoginVerify.LoginStatus loginStatus = new LoginVerify().login(id, password);
-        String result = loginStatus.name();
         Cookie cookie;
         if (remember.contains("account")) {
             //使用Cookie保存id,如果保存中文需要URL编码
@@ -70,6 +71,8 @@ public class Login extends HttpServlet {
                         - 输入url访问才可以（http://bbb.com/B可以获取到A的cookie，在B机器访问http://localhost/B不可以获得cookie）
              */
         }
+        response.addCookie(cookie);
+
         //获取session对象
         HttpSession httpSession = request.getSession();
         if (remember.contains("password")) {
@@ -98,14 +101,17 @@ public class Login extends HttpServlet {
          */
 
         // 返回
-        response.addCookie(cookie);
-        response.setContentType("text/html;charset=utf-8");
-        Writer writer = response.getWriter();
-        writer.write("<h1>" + result + "</h1>");
+        if (loginStatus == LoginVerify.LoginStatus.Success) {
+            httpSession.setAttribute("user", GetUserById.getUserById(id));
+            response.sendRedirect("/show.jsp");
+        } else {
+            httpSession.setAttribute("login_msg", loginStatus.name());
+            response.sendRedirect("/index.jsp");
+        }
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
         doGet(request, response);
     }

@@ -1,4 +1,5 @@
-<%@ page import="util.CookieUtils" %><%--
+<%@ page import="util.CookieUtils" %>
+<%--
   Created by IntelliJ IDEA.
   User: zhaox
   Date: 2022/1/28
@@ -35,10 +36,8 @@
     <div>
         <label>
             <a>输入密码：</a>
-            <%--根据key获取session的值--%>
-            <input type="password" name="password" value="<%
-            String password=(String)request.getSession().getAttribute("password");
-            if(password!=null){%><%=password%><%}%>"/>
+            <%-- 使用EL标签获取域中存储的数据--%>
+            <input type="password" name="password" value="${password}">
         </label>
     </div>
     <div>
@@ -50,6 +49,7 @@
         </label>
         <label>
             <input type="checkbox" name="remember" value="password" id="password"
+            <%--根据key获取session的值--%>
                    <%if(request.getSession().getAttribute("password")!=null){%>checked="checked"<%}%>
             >
             记住密码
@@ -58,6 +58,7 @@
     </div>
     <br>
     <button type="submit">登陆</button>
+    ${login_msg}<%request.getSession().removeAttribute("login_msg");%>
 </form>
 
 <script>

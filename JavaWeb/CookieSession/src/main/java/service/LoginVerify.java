@@ -18,11 +18,8 @@ public class LoginVerify {
         if (id == null || password == null) {
             return LoginStatus.ValueIsNull;
         }
-        SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSession();
-        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
-        User user = userMapper.selectById(id);
-        sqlSession.close();
+        User user = GetUserById.getUserById(id);
 
         if (user == null) {
             return LoginStatus.NotExist;

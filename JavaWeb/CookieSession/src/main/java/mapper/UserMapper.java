@@ -17,4 +17,5 @@ public interface UserMapper {
     @Select("select * from test.test_table where id=#{id};")
     @ResultMap("UserMap")
     User selectById(int id);
+
 }
