@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         //获取数据
-        Integer id = Integer.valueOf((request.getParameter("id")).trim());
+        int id = Integer.parseInt((request.getParameter("id")).trim());
         String password = request.getParameter("password").trim();
         LOGGER.info("输入的id和密码：" + id + "," + password);
         //notice 接收数组用getParameterValues
@@ -42,7 +42,7 @@ public class Login extends HttpServlet {
         Cookie cookie;
         if (remember.contains("account")) {
             //使用Cookie保存id,如果保存中文需要URL编码
-            String id_str = URLEncoder.encode(id.toString(), StandardCharsets.UTF_8);
+            String id_str = URLEncoder.encode(Integer.toString(id), StandardCharsets.UTF_8);
             cookie = new Cookie("id", id_str);
             //设置Cookie存活时间  7天
             cookie.setMaxAge(60 * 60 * 24 * 7);
@@ -106,7 +106,7 @@ public class Login extends HttpServlet {
             response.sendRedirect("/show.jsp");
         } else {
             httpSession.setAttribute("login_msg", loginStatus.name());
-            response.sendRedirect("/index.jsp");
+            response.sendRedirect("/login.jsp");
         }
     }
 
