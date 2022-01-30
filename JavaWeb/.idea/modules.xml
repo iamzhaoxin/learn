@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Ajax/Ajax.iml" filepath="$PROJECT_DIR$/Ajax/Ajax.iml" />
       <module fileurl="file://$PROJECT_DIR$/CookieSession/CookieSession.iml" filepath="$PROJECT_DIR$/CookieSession/CookieSession.iml" />
       <module fileurl="file://$PROJECT_DIR$/DataBase/DataBase.iml" filepath="$PROJECT_DIR$/DataBase/DataBase.iml" />
       <module fileurl="file://$PROJECT_DIR$/MavenMybatisDemo/MavenMybatisDemo.iml" filepath="$PROJECT_DIR$/MavenMybatisDemo/MavenMybatisDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/TomcatDemo/TomcatDemo.iml" filepath="$PROJECT_DIR$/TomcatDemo/TomcatDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vue/Vue.iml" filepath="$PROJECT_DIR$/Vue/Vue.iml" />
       <module fileurl="file://$PROJECT_DIR$/WebDesign/WebDesign.iml" filepath="$PROJECT_DIR$/WebDesign/WebDesign.iml" />
     </modules>
   </component>

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Ajax" />
     <file type="web" url="file://$PROJECT_DIR$/CookieSession" />
     <file type="web" url="file://$PROJECT_DIR$/TomcatDemo" />
+    <file type="web" url="file://$PROJECT_DIR$/Vue" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -11,6 +13,8 @@
         <option value="$PROJECT_DIR$/MavenMybatisDemo/pom.xml" />
         <option value="$PROJECT_DIR$/TomcatDemo/pom.xml" />
         <option value="$PROJECT_DIR$/CookieSession/pom.xml" />
+        <option value="$PROJECT_DIR$/Ajax/pom.xml" />
+        <option value="$PROJECT_DIR$/Vue/pom.xml" />
       </list>
     </option>
   </component>

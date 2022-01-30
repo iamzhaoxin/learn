@@ -16,7 +16,7 @@ import java.io.IOException;
         - 后缀名拦截 *.jsp
         - 拦截所有  /*
  */
-@WebFilter("/*")
+@WebFilter(urlPatterns = "/*", filterName = "FilterDemo")
 public class FilterDemo implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

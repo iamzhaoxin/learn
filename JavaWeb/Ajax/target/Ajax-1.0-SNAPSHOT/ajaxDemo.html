@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AjaxDemo</title>
+</head>
+<body>
+
+<h1 id="text"></h1>
+
+<script>
+    let name = "zx"
+    // 1. 创建核心对象
+    let xmlHttpRequest = new XMLHttpRequest();
+    // 2. 发送请求
+    xmlHttpRequest.open("GET", "http://localhost:80/ajax/AjaxServlet?name=" + name);
+    xmlHttpRequest.send();
+    // 3. 获取响应
+    xmlHttpRequest.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            let text = document.getElementById("text")
+            text.innerHTML = this.responseText;
+        }
+    }
+</script>
+</body>
+</html>

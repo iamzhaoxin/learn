@@ -14,7 +14,7 @@ import java.io.IOException;
         - 配置注解的Filter，优先级按照过滤器类名（字符串）的自然排序
 
  */
-@WebFilter("/*")
+@WebFilter(urlPatterns = "/*", filterName = "FilterDemo2")
 public class FilterDemo2 implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AxiosDemo</title>
+    <script src="js/axios.js"></script>
+</head>
+<body>
+
+<h1 id="text"></h1>
+
+<script>
+    //fixme Cannot use import statement outside a module
+    //import axios from "axios";
+
+    import axios from "axios";
+
+    let name = "axios"
+    // fixme 加上后，前端会报错，找不到require方法
+    // const axios = require('axios').default;
+    /* notice axios-get方法
+    axios({
+        method: "GET",
+        url: "http://localhost:80/ajax/AjaxServlet?name=" + name,
+    }).then(function (response) {
+        let text = document.getElementById("text");
+        text.innerHTML = response.data;
+    })
+
+    axios.get("http://localhost:80/ajax/AjaxServlet?name=" + name).then(function (response) {
+        let text = document.getElementById("text");
+        text.innerHTML = response.data;
+    })
+    */
+
+
+    /* notice axios-post
+    axios({
+        method: "POST",
+        url: "http://localhost:80/ajax/AjaxServlet",
+        data: "name=axios-post",
+    }).then(function (response) {
+        let text = document.getElementById("text");
+        text.innerHTML = response.data;
+    })
+
+    axios.post("http://localhost:80/ajax/AjaxServlet", "name=axios-post").then(function (response) {
+        let text = document.getElementById("text");
+        text.innerHTML = response.data;
+    })
+     */
+
+    //JSON
+    let formData = {
+        id: "",
+        money: "",
+        password: "",
+    }
+    formData.id = 123;
+    formData.money = 45678;
+    formData.password = "JSON";
+
+    axios.post("http://localhost:80/ajax/AxiosServlet", formData).then(function (response) {
+        let text = document.getElementById("text");
+        let user = response.data;
+        text.innerHTML = user.id + " " + user.money + "  " + user.password;
+    })
+</script>
+</body>
+</html>

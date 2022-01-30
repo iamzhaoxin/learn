@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Ajax:war">
+    <output-path>$PROJECT_DIR$/Ajax/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Ajax</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Ajax-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Ajax:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+</head>
+<body>
+
+<div id="app">
+    <label>
+        <a v-bind:href="url">点击一下</a>
+        <!-- v-bind:可以简写成: -->
+        <a :href="url">点击一下</a>
+        <input name="username" v-model="url">
+        <!--插值表达式-->
+        {{url}}
+        <br>
+        <button v-on:click="add()">(+)按钮{{A}}</button>
+        <!-- v-on: 可以简化成 @-->
+        <button @click="subtraction()">(-)按钮{{A}}</button>
+    </label>
+
+
+    <!-- fixme 怎么动态刷新判断?-->
+    <div v-if="A===1">a=1</div>
+    <div v-else-if="A===2">a=2</div>
+    <div v-else>a>2</div>
+    <!--
+        notice v-if：不满足则不渲染   v-show：渲染，给标签加上display:none的属性
+    -->
+    <div v-show="A===1">v-show</div>
+
+    <hr>
+    <div v-for="arr in array">
+        {{arr}}<br>
+    </div>
+    <div v-for="(arr,i) in array">
+        {{i + 1}} : {{arr}}
+    </div>
+</div>
+
+<!--
+    notice 要把script标签写在body最底部（要等DOM加载完，再加载js，不然获取不到）
+           被引用的js放到引用了的js前面
+-->
+<script src="js/axios.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/vueTest.js"></script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 package web.filter;
 
+import jdk.jfr.Name;
 import pojo.User;
 
 import javax.servlet.*;
@@ -16,7 +17,8 @@ import java.io.IOException;
 /**
  * 原理：登陆成功后，将user对象放入session中
  */
-@WebFilter("/*")
+// notice 为避免干扰其他应用，以后还是要把路径 在根目录加上应用名比较好
+@WebFilter(urlPatterns = "/*", filterName = "LoginFilter")
 public class LoginFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

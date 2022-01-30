@@ -9,12 +9,16 @@
         <module name="TomcatDemo" />
         <module name="CookieSession" />
         <module name="MavenMybatisDemo" />
+        <module name="Ajax" />
+        <module name="Vue" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Ajax" target="17" />
       <module name="CookieSession" target="17" />
       <module name="MavenMybatisDemo" target="17" />
       <module name="TomcatDemo" target="17" />
+      <module name="Vue" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

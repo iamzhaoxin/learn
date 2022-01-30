@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Vue:war">
+    <output-path>$PROJECT_DIR$/Vue/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Vue</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Vue-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Vue:war exploded" />
+    </root>
+  </artifact>
+</component>
