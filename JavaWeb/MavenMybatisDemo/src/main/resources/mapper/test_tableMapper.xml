@@ -72,7 +72,7 @@
                     <if test="money!=null and money!=''">
                         and money > #{money}
                     </if>
-                - <where>标签 替换 where关键字
+                - <where>标签 替换 where关键字 where标签可以过滤掉条件语句中的第一个and或or关键字
         - choose(when,otherwise)    单条件动态查询，类似switch case default
         - trim(where,set)
         - foreach

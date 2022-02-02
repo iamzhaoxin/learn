@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="TomcatDemo" />
+        <module name="OptimizeServlet" />
         <module name="CookieSession" />
         <module name="MavenMybatisDemo" />
         <module name="Ajax" />
@@ -17,6 +18,7 @@
       <module name="Ajax" target="17" />
       <module name="CookieSession" target="17" />
       <module name="MavenMybatisDemo" target="17" />
+      <module name="OptimizeServlet" target="17" />
       <module name="TomcatDemo" target="17" />
       <module name="Vue" target="17" />
     </bytecodeTargetLevel>

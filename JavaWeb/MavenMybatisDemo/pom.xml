@@ -54,9 +54,23 @@
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
             <scope>test</scope>
+            <!--可选依赖：对外隐藏当前依赖，无法传递，默认false-->
+            <optional>true</optional>
         </dependency>
 
-
+        <!--依赖传递-->
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>OptimizeServlet</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <!--排除依赖-->
+            <exclusions>
+                <exclusion>
+                    <groupId>com.alibaba</groupId>
+                    <artifactId>fastjson</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
     </dependencies>
 
 </project>

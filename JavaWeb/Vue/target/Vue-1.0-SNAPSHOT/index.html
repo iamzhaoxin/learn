@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Vue</title>
+    <!-- 引入element(2)样式 -->
+    <link rel="stylesheet" href="element-ui/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 </head>
 <body>
 
@@ -39,6 +42,19 @@
     </div>
 </div>
 
+<!--fixme css无法生效-->
+<div>
+    <el-row>
+        <el-button>默认按钮</el-button>
+        <el-button type="primary">主要按钮</el-button>
+        <el-button type="success">成功按钮</el-button>
+        <el-button type="info">信息按钮</el-button>
+        <el-button type="warning">警告按钮</el-button>
+        <el-button type="danger">危险按钮</el-button>
+    </el-row>
+</div>
+
+</body>
 <!--
     notice 要把script标签写在body最底部（要等DOM加载完，再加载js，不然获取不到）
            被引用的js放到引用了的js前面
@@ -46,5 +62,6 @@
 <script src="js/axios.js"></script>
 <script src="js/vue.js"></script>
 <script src="js/vueTest.js"></script>
-</body>
+<!-- 引入element(2)组件库 -->
+<script src="element-ui/index.js"></script>
 </html>

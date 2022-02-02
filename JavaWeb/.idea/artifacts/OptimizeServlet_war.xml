@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="OptimizeServlet:war">
+    <output-path>$PROJECT_DIR$/OptimizeServlet/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>OptimizeServlet</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="OptimizeServlet-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="OptimizeServlet:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+<div id="login">
+    <div>
+        <label>输入id: <input type="text" v-model.trim="id"></input> </label>
+        {{id_msg}}
+    </div>
+    <div>
+        <label>输入password: <input type="password" v-model.trim="password"></input> </label>
+    </div>
+
+    <div>
+        <label> <input type="checkbox" v-model="rememberAccount"></input>记住账号 </label>
+        <label><input type="checkbox" v-model="rememberPassword"></input>记住密码 </label>
+    </div>
+
+    <br>
+    <button @click="submit">登陆</button>
+</div>
+
+<div>完全的HTML+Vue+Axios+Servlet+Service+Logback+Mybatis(Mapper)</div>
+<div>优化了Servlet（重写了HttpServlet的service，对request重定向到一个java文件中的不同类）</div>
+<div>优化了Service，实现 包impl 中的接口</div>
+
+
+</body>
+<script src="js/axios.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/my.js"></script>
+</html>
