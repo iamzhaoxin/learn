@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="spring_ioc:war">
+    <output-path>$PROJECT_DIR$/spring_ioc/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>spring_ioc</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="spring_ioc-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="spring_ioc:war exploded" />
+    </root>
+  </artifact>
+</component>
