@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring_ioc" />
+        <module name="spring_ioc_anno" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17">
       <module name="spring_ioc" target="17" />
+      <module name="spring_ioc_anno" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
