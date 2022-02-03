@@ -1,7 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="userDao" class="dao.impl.UserDaoImpl"/>
+
+    <bean id="userDao" class="dao.impl.UserDaoImpl" scope="singleton" init-method="init" destroy-method="destroy"/>
+    <!--工厂静态方法实例化-->
+    <bean id="userDaoStaticFactory" class="factory.StaticFactory" factory-method="getUserDao"/>
+    <!--工厂实例方法实例化-->
+    <bean id="dynamicFactory" class="factory.DynamicFactory"/>
+    <bean id="userDaoDynamicFactory" factory-bean="dynamicFactory" factory-method="getUserDao"/>
+
+    <!--依赖注入:set方法,调用setUser1函数-->
+    <!--
+        <bean id="userService" class="service.impl.UserServiceImpl">
+            <property name="user1" ref="userDao"/>
+        </bean>
+    -->
+    <!--p命名空间-->
+    <!--    <bean id="userService" class="service.impl.UserServiceImpl" p:user1-ref="userDao"/>-->
+
+    <!--依赖注入:构造方法-->
+    <bean id="userService" class="service.impl.UserServiceImpl">
+        <!--构造参数-->
+        <constructor-arg name="user1" ref="userDao"/>
+    </bean>
+
+    <!--依赖注入:普通类型-->
+    <bean id="userDaoWithParams" class="dao.impl.UserDaoImpl">
+        <property name="username" value="zx"/>
+        <property name="age" value="22"/>
+    </bean>
+    <!--依赖注入:集合类型-->
+    <bean id="userDaoWithSet" class="dao.impl.UserDaoImpl">
+        <property name="strList">
+            <list>
+                <!--如果List里的是对象,用ref-->
+                <value>aaa</value>
+                <value>哈哈哈</value>
+            </list>
+        </property>
+        <property name="userMap">
+            <map>
+                <entry key="zx" value="22"/>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="p1">aaa</prop>
+                <prop key="p2">bbb</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--引入其他配置文件-->
+    <!--    <import resource="applicationContext-user.xml"/>-->
 </beans>
