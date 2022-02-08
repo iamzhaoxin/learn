@@ -2,6 +2,7 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/spring_ioc" />
+    <file type="web" url="file://$PROJECT_DIR$/spring_jdbc" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc" />
   </component>
   <component name="MavenProjectsManager">
@@ -10,6 +11,8 @@
         <option value="$PROJECT_DIR$/spring_ioc/pom.xml" />
         <option value="$PROJECT_DIR$/spring_ioc_anno/pom.xml" />
         <option value="$PROJECT_DIR$/spring_mvc/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_jdbc/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_aop/pom.xml" />
       </list>
     </option>
   </component>

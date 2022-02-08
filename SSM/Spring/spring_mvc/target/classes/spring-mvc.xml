@@ -7,24 +7,55 @@
 
     <context:component-scan base-package="controller"/>
 
-    <!--配置处理器映射器,自动转换为JSON-->
-    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
-        <property name="messageConverters">
-            <!--setMessageConverters,增加一个转换为JSON的转换器到messageConverters的list中-->
+    <!--
+        notice 配置文件上传解析器
+            - 使SpringMVC接收multipart/form-data数据(需要有commons-fileupload和commons-io)
+    -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--上传文件的编码类型-->
+        <property name="defaultEncoding" value="UTF-8"/>
+        <!--上传文件总大小-->
+        <!--        <property name="maxUploadSize" value="5242800"/>-->
+        <!--上传文件单个大小-->
+        <!--        <property name="maxUploadSizePerFile" value="5000"/>-->
+    </bean>
+
+    <!--
+        notice mvc的注解驱动
+            - 作用是自动注册RequestMappingHandlerMapping和RequestMappingHandlerAdapter这两个bean，也就是无需再手动配置处理映射器和处理适配器
+            - 可以自动将return的对象转换为JSON发送到前端
+            - conversion-service:配置转换器
+    -->
+    <mvc:annotation-driven conversion-service="conversionService">
+        <!--配置处理器映射器 是?-->
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg value="UTF-8"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+
+    <bean class="org.springframework.web.filter.CharacterEncodingFilter">
+        <constructor-arg value="UTF-8"/>
+    </bean>
+
+    <!--
+        notice 这两种方法,都需要提前添加<mvc:annotation-driven/>,否则会导致Controller类下的RequestMapping下的方法失效
+    -->
+    <!--方法一: 开放资源的访问-->
+    <!--    <mvc:resources mapping="/js/**" location="/js/"/>-->
+    <!--方法二: 找不到就交给原始路由器-->
+    <mvc:default-servlet-handler/>
+
+    <!-- 声明转换器-->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
             <list>
-                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+                <bean class="converter.DateConverter"/>
             </list>
         </property>
     </bean>
 
-    <!--
-        notice 使SpringMVC接收multipart/form-data数据(需要有<groupId>commons-fileupload</groupId><artifactId>commons-fileupload</artifactId>)
-    -->
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <property name="defaultEncoding" value="UTF-8"/>
-    </bean>
-
-    <!-- mvc的注解驱动-->
-    <!--    <mvc:annotation-driven/>-->
 
 </beans>
