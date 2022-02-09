@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring_mvc" />
         <module name="spring_jdbc" />
+        <module name="spring_transaction" />
         <module name="spring_ioc" />
         <module name="spring_ioc_anno" />
         <module name="spring_aop" />
@@ -19,6 +20,7 @@
       <module name="spring_ioc_anno" target="17" />
       <module name="spring_jdbc" target="17" />
       <module name="spring_mvc" target="17" />
+      <module name="spring_transaction" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
