@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 目标对象-->
+    <bean id="target" class="service.impl.UserServiceImpl"/>
+    <!-- 切面对象-->
+    <bean id="myAspect" class="aop.xml.MyAspect"/>
+    <!-- 配置织入: PointCut和Advice匹配-->
+    <aop:config>
+        <!-- 声明切面-->
+        <aop:aspect ref="myAspect">
+            <!--
+                notice 切面配置 Aspect:Advice+PointCut
+                    切点表达式语法: execution([修饰符] 返回值类型 包名.类名.方法名(参数))
+                        - 修饰符可以不写
+                        - 返回值类型/包名/类名/方法名 都可以用*表示任意
+                        - 包名和类名之间一个.表示当前包下的类,两个..表示当前包及其子包下的类
+                        - 参数列表用..表示任意个数/任意类型的参数
+                    Advice配置:
+                        - <aop:before>  前置通知
+                        - <aop:after-returning>  后置通知
+                        - <aop:around>  环绕通知
+                        - <aop:throwing>  异常抛出通知
+                        - <aop:after>  最终通知,无论Advice是否执行,是否抛出异常,都会执行
+            -->
+            <aop:before method="before" pointcut="execution(public void service.impl.UserServiceImpl.save())"/>
+
+            <!-- 抽取切点表达式-->
+            <aop:pointcut id="myPointCut" expression="execution(* service..*.*(..))"/>
+            <aop:before method="before" pointcut-ref="myPointCut"/>
+            <aop:before method="before" pointcut-ref="myPointCut"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>
