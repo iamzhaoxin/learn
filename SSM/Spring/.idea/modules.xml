@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/spring_jdbc/spring_jdbc.iml" filepath="$PROJECT_DIR$/spring_jdbc/spring_jdbc.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_mvc/spring_mvc.iml" filepath="$PROJECT_DIR$/spring_mvc/spring_mvc.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_transaction/spring_transaction.iml" filepath="$PROJECT_DIR$/spring_transaction/spring_transaction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_transaction_anno/spring_transaction_anno.iml" filepath="$PROJECT_DIR$/spring_transaction_anno/spring_transaction_anno.iml" />
     </modules>
   </component>
 </project>
