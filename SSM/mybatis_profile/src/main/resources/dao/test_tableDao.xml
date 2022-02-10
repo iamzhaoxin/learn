@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.test_tableDao">
+
+    <resultMap id="test_tableMap" type="domain.User">
+        <!-- id:对主键字段映射,column:数据表字段,property:实体类属性-->
+        <id column="id" property="id"/>
+        <!-- result：对一般字段映射-->
+        <result column="money" property="money"/>
+        <result column="password" property="password"/>
+    </resultMap>
+
+    <!-- notice sql语句的抽取 (使用:<include refid="selectTestTestTable"/>)-->
+    <sql id="selectTestTestTable">
+        select *
+        from test.test_table
+    </sql>
+
+
+    <select id="selectAll" resultMap="test_tableMap">
+        <include refid="selectTestTestTable"/>
+    </select>
+
+
+    <select id="selectById" parameterType="int" resultMap="test_tableMap">
+        <include refid="selectTestTestTable"/>
+        where id
+        <![CDATA[
+            <
+        ]]>
+        #{id};
+    </select>
+
+    <select id="selectByCondition" resultMap="test_tableMap">
+        <include refid="selectTestTestTable"/>
+        <where>
+            <if test="id!=null">
+                and id &lt; #{id}
+            </if>
+            <if test="money!=null and money!=''">
+                and money > #{money}
+            </if>
+            <if test="password!=null and password!=''">
+                and password like #{password};
+            </if>
+        </where>
+    </select>
+
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
+        insert into test.test_table(id, money, password)
+        VALUES (#{id}, #{money}, #{password});
+    </insert>
+
+    <update id="updateById">
+        update test.test_table
+        <set>
+            <if test="money!=null and money!=''">
+                money = #{money},
+            </if>
+            <if test="password!=null and password!=''">
+                password = #{password},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+    <delete id="deleteByIds">
+        delete
+        from test.test_table
+        where id
+        in (
+        <foreach collection="ids" item="id" separator=",">
+            #{id}
+        </foreach>
+        )
+    </delete>
+
+</mapper>

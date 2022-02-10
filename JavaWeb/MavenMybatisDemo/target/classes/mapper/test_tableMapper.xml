@@ -33,9 +33,15 @@
         <result column="password" property="password"/>
     </resultMap>
 
-    <select id="selectAll" resultMap="test_tableMap">
+    <!-- notice sql语句的抽取 (使用:<include refid="selectTestTestTable"/>)-->
+    <sql id="selectTestTestTable">
         select *
-        from test.test_table;
+        from test.test_table
+    </sql>
+
+
+    <select id="selectAll" resultMap="test_tableMap">
+        <include refid="selectTestTestTable"/>
     </select>
 
     <!--
@@ -44,14 +50,14 @@
             - ${}   直接拼接sql       可以被SQL注入
 
         参数类型parameterType可以省略不写
+        如果是自己声明的一个类型，因为可能在引入的jar包中有同名的类，所以需要制定parameterType
 
         notice 特殊字符（select * from table where id < 10;)
         - 转义字符：（小于号 &lt;）
         - CDATA区
     -->
     <select id="selectById" parameterType="int" resultMap="test_tableMap">
-        select *
-        from test.test_table
+        <include refid="selectTestTestTable"/>
         where id
         <![CDATA[
             <
@@ -72,14 +78,13 @@
                     <if test="money!=null and money!=''">
                         and money > #{money}
                     </if>
-                - <where>标签 替换 where关键字
+                - <where>标签 替换 where关键字 where标签可以过滤掉条件语句中的第一个and或or关键字
         - choose(when,otherwise)    单条件动态查询，类似switch case default
         - trim(where,set)
         - foreach
     -->
     <select id="selectByCondition" resultMap="test_tableMap">
-        select *
-        from test.test_table
+        <include refid="selectTestTestTable"/>
         <where>
             <if test="id!=null">
                 and id &lt; #{id}
