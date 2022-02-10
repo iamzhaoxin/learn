@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="dao.test_tableDao">
+<mapper namespace="mapper.test_tableMapper">
 
     <resultMap id="test_tableMap" type="domain.User">
         <!-- id:对主键字段映射,column:数据表字段,property:实体类属性-->

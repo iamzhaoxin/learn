@@ -1,14 +1,18 @@
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import mapper.test_tableMapper;
+import domain.Order;
 import domain.User;
+import mapper.orderMapper;
+import mapper.test_tableMapper;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 /**
@@ -33,21 +37,16 @@ public class MybatisTest {
     @Test
     public void test() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        test_tableMapper test_tableDao=sqlSession.getMapper(test_tableMapper.class);
+        orderMapper orderMapper=sqlSession.getMapper(mapper.orderMapper.class);
 
         //设置分页相关参数 当前页/每页显示的条数
-        PageHelper.startPage(1,3);
+        PageHelper.startPage(1,10);
 
-        List<User> users = test_tableDao.selectAll();
+        List<Order> orders = orderMapper.findAll();
 
-        for (User user:users){
-            System.out.println(user);
+        for (Order order:orders){
+            System.out.println(order);
         }
-        //获得分页相关参数
-        PageInfo<User> pageInfo= new PageInfo<>(users);
-        System.out.println("当前页: "+pageInfo.getPageNum());
-        System.out.println("下一页: "+pageInfo.getNextPage());
-        System.out.println(pageInfo);
 
         sqlSession.close();
     }

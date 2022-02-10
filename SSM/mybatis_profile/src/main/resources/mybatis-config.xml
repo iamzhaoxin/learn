@@ -5,18 +5,32 @@
 
 <configuration>
 
-    <!--
-        notice Mybatis外部引用Properties文件代码不显示高亮问题 https://blog.csdn.net/Harrie_Even/article/details/107900613
-    -->
+    <!--notice Mybatis外部引用Properties文件代码不显示高亮问题 https://blog.csdn.net/Harrie_Even/article/details/107900613-->
     <properties resource="jdbc.properties"/>
+
+    <!--自定义别名-->
+    <typeAliases>
+        <typeAlias type="domain.User" alias="user"/>
+    </typeAliases>
+
+    <!--注册类型处理器-->
+    <typeHandlers>
+        <typeHandler handler="handler.MoneyTypeHandler"/>
+    </typeHandlers>
+
+    <plugins>
+        <!--分页助手插件 https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
+    </plugins>
+
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <!--fixme mybatis必须配置driver-->
+                <!--notice mybatis必须配置driver-->
                 <property name="driver" value="${jdbc.driver}"/>
                 <property name="url" value="${jdbc.url}"/>
-                <!--fixme 不是user-->
+                <!--notice 不是user-->
                 <property name="username" value="${jdbc.username}"/>
                 <property name="password" value="${jdbc.password}"/>
             </dataSource>
@@ -25,7 +39,7 @@
 
     <!--todo 加载sql配置文件-->
     <mappers>
-        <package name="dao"/>
+        <package name="mapper"/>
     </mappers>
 
 </configuration>

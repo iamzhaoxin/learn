@@ -1,4 +1,4 @@
-package dao;
+package mapper;
 
 import domain.User;
 import org.apache.ibatis.annotations.Param;
@@ -12,7 +12,7 @@ import java.util.List;
  * @Author: 赵鑫
  * @Date: 2022/1/22 22:28
  */
-public interface test_tableDao {
+public interface test_tableMapper {
 
     //查询test.test_table表的所有内容
     List<User> selectAll();

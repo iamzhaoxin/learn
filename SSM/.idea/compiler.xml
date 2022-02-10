@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring_jdbc" />
         <module name="spring_transaction" />
+        <module name="mybatis_multi" />
         <module name="spring_ioc" />
         <module name="spring_transaction_anno" />
         <module name="spring_mvc" />
@@ -17,6 +18,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="mybatis_multi" target="17" />
       <module name="mybatis_profile" target="17" />
       <module name="spring_aop" target="17" />
       <module name="spring_ioc" target="17" />

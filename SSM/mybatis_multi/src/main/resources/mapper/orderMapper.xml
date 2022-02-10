@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.orderMapper">
+
+    <resultMap id="order" type="domain.Order">
+        <id column="oid" property="oid"/>
+<!--
+        可以用association代替
+        <result column="id" property="user.id"/>
+        <result column="money" property="user.money"/>
+        <result column="password" property="user.password"/>
+-->
+        <result column="things" property="things"/>
+        <!--association要放在result后面
+            property: 当前实体(order)中的属性名称(private User user)
+            javaType: 当前实体(order)中的属性的类型(User)
+        -->
+        <association property="user" javaType="domain.User">
+            <result column="id" property="id"/>
+            <result column="money" property="money"/>
+            <result column="password" property="password"/>
+        </association>
+    </resultMap>
+
+    <select id="findAll" resultMap="order">
+        select * from test.test_table user,test.`order` `order` where user.id=`order`.uid
+    </select>
+</mapper>
