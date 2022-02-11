@@ -5,5 +5,13 @@
 
 <mapper namespace="mapper.test_tableMapper">
 
-
+    <resultMap id="user" type="userWithOrders_multi">
+        <id column="id" property="id"/>
+        <result column="money" property="money"/>
+        <result column="password" property="password"/>
+        <collection property="orderList" ofType="domain.Order">
+            <id column="oid" property="oid"/>
+            <result column="things" property="things"/>
+        </collection>
+    </resultMap>
 </mapper>

@@ -18,6 +18,7 @@
         <option value="$PROJECT_DIR$/spring_transaction/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis_profile/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis_multi/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis_anno/pom.xml" />
       </list>
     </option>
   </component>

@@ -13,11 +13,13 @@
         <module name="spring_transaction_anno" />
         <module name="spring_mvc" />
         <module name="mybatis_profile" />
+        <module name="mybatis_anno" />
         <module name="spring_ioc_anno" />
         <module name="spring_aop" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="mybatis_anno" target="17" />
       <module name="mybatis_multi" target="17" />
       <module name="mybatis_profile" target="17" />
       <module name="spring_aop" target="17" />

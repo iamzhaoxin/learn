@@ -8,6 +8,10 @@
     <!--notice Mybatis外部引用Properties文件代码不显示高亮问题 https://blog.csdn.net/Harrie_Even/article/details/107900613-->
     <properties resource="jdbc.properties"/>
 
+    <typeAliases>
+        <typeAlias type="domain.User" alias="userWithOrders_multi"/>
+    </typeAliases>
+
     <plugins>
         <!--分页助手插件 sql语句不要加分号,不然会SQL语句错误 https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md -->
         <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
