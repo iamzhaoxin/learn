@@ -9,6 +9,8 @@
 
     <typeAliases>
         <typeAlias type="domain.User" alias="userWithOrders"/>
+        <!-- package: 包下所有类都自动起别名,User类自定起别名为User和user-->
+        <package name="domain"/>
     </typeAliases>
 
     <environments default="development">
