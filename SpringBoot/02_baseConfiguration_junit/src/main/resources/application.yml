@@ -1,0 +1,24 @@
+# notice 导入对应starter后才可以配置对应属性(配置server.port要导入tomcat)
+# notice 可以用properties>yml>yaml文件配置boot,不同配置文件中的相同配置按照加载优先级覆盖,不同配置文件中的不同配置全部保留
+server:
+  port: 80
+  servlet:
+    context-path: /base_configuration
+
+read_yml_value: 读取yml数据
+
+users:
+  - name: 'zx'
+    age: 23
+  - name: 'wtz'
+    age: 22
+
+baseDir: c:\windows
+# 使用${}引用数据
+tempDir: ${baseDir}\temp  # 如果要用\t表示转义字符,属性值要用双引号包裹
+
+# 创建实体类封装数据
+user1:
+  id: 1
+  money: 66
+  password: 123456
