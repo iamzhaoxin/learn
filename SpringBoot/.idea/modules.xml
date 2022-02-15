@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/01_quickstart_aliyun/01_quickstart_aliyun.iml" filepath="$PROJECT_DIR$/01_quickstart_aliyun/01_quickstart_aliyun.iml" />
       <module fileurl="file://$PROJECT_DIR$/02_baseConfiguration_junit/02_baseConfiguration_junit.iml" filepath="$PROJECT_DIR$/02_baseConfiguration_junit/02_baseConfiguration_junit.iml" />
       <module fileurl="file://$PROJECT_DIR$/03_mybatis/03_mybatis.iml" filepath="$PROJECT_DIR$/03_mybatis/03_mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04_SSM/04_SSM.iml" filepath="$PROJECT_DIR$/04_SSM/04_SSM.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,15 @@
+server:
+  port: 80
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://82.157.138.64:3306/test
+      username: root
+      password: 123456
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto   #\u4F7F\u7528\u6570\u636E\u5E93\u81EA\u5E26\u7684id\u81EA\u589E\u7B56\u7565
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   #\u65E5\u5FD7\u6253\u5370\u5230\u63A7\u5236\u53F0

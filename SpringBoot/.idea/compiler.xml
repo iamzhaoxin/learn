@@ -7,8 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="03_mybatis" />
         <module name="01_quickstart_aliyun" />
+        <module name="04_SSM" />
+        <module name="03_mybatis" />
         <module name="02_baseConfiguration_junit" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
       <module name="02_baseConfiguration_junit" target="11" />
       <module name="03_junit" target="11" />
       <module name="03_mybatis" target="11" />
+      <module name="04_SSM" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -26,6 +28,7 @@
       <module name="02_baseConfiguration_junit" options="-parameters" />
       <module name="03_junit" options="-parameters" />
       <module name="03_mybatis" options="-parameters" />
+      <module name="04_SSM" options="-parameters" />
     </option>
   </component>
 </project>
