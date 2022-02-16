@@ -50,8 +50,18 @@ public class UserController {
     }
 
     @GetMapping("{currentPage}/{pageSize}")
-    public R getById(@PathVariable Integer currentPage, @PathVariable Integer pageSize){
-        return new R(true,iUserService.getPage(currentPage, pageSize));
+    public R getById(@PathVariable Integer currentPage, @PathVariable Integer pageSize, User user){
+        IPage<User> page=iUserService.getPage(currentPage,pageSize,user);
+        //如果当前页码值大于总页码值,重新执行查询(这只是补救方案,不能避免bug,比如重新查询前,又删掉了一页,之前的最后一页又大于最大页码了)(可以直接跳第一页)
+        if(currentPage>page.getPages()){
+            page=iUserService.getPage((int) page.getPages(),pageSize,user);
+        }
+        return new R(true,page);
+    }
+
+    @DeleteMapping("{id}")
+    public R delete(@PathVariable Integer id){
+        return new R(true,iUserService.removeById(id));
     }
 
 }
