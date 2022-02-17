@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 /**
  * @author zhaoxin
  */
+
+//notice  slf4j-api、slf4j-log4j12、log4j之间关系  https://cloud.tencent.com/developer/article/1497511
 public class Logback {
     //public static final Logger LOGGER = LoggerFactoy.getLogger("Logback.class");  //因为少了一个 r ，崩溃两个小时
     public static final Logger LOGGER = LoggerFactory.getLogger("Logback.class");
