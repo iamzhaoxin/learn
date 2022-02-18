@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                  xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xmlns:activiti="http://activiti.org/bpmn" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_03io3g1"
+                  targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.9.0"
+                  modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+<bpmn:process id="dayAfterModify" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0aslzjz</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="_3" name="吃饭" activiti:assignee="小一">
+      <bpmn:incoming>Flow_0aslzjz</bpmn:incoming>
+      <bpmn:outgoing>Flow_1783luv</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="_4" name="学习" activiti:assignee="小二">
+      <bpmn:incoming>Flow_1783luv</bpmn:incoming>
+      <bpmn:outgoing>Flow_1mmql3s</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="_5" name="睡觉" activiti:assignee="小三">
+      <bpmn:incoming>Flow_1mmql3s</bpmn:incoming>
+      <bpmn:outgoing>Flow_0euefsd</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_1pq902g">
+      <bpmn:incoming>Flow_0euefsd</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0aslzjz" sourceRef="StartEvent_1" targetRef="_3" />
+    <bpmn:sequenceFlow id="Flow_1783luv" sourceRef="_3" targetRef="_4" />
+    <bpmn:sequenceFlow id="Flow_1mmql3s" sourceRef="_4" targetRef="_5" />
+    <bpmn:sequenceFlow id="Flow_0euefsd" sourceRef="_5" targetRef="Event_1pq902g" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="day">
+      <bpmndi:BPMNEdge id="Flow_0aslzjz_di" bpmnElement="Flow_0aslzjz">
+        <di:waypoint x="210" y="108" />
+        <di:waypoint x="210" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1783luv_di" bpmnElement="Flow_1783luv">
+        <di:waypoint x="210" y="230" />
+        <di:waypoint x="210" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1mmql3s_di" bpmnElement="Flow_1mmql3s">
+        <di:waypoint x="210" y="340" />
+        <di:waypoint x="210" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0euefsd_di" bpmnElement="Flow_0euefsd">
+        <di:waypoint x="210" y="440" />
+        <di:waypoint x="210" y="472" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_0b5tm5o_di" bpmnElement="_3">
+        <dc:Bounds x="160" y="150" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0mive37_di" bpmnElement="_4">
+        <dc:Bounds x="160" y="260" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="192" y="72" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1wktafg_di" bpmnElement="_5">
+        <dc:Bounds x="160" y="360" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1pq902g_di" bpmnElement="Event_1pq902g">
+        <dc:Bounds x="192" y="472" width="36" height="36" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

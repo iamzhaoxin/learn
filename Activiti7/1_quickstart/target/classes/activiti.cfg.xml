@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation=
-               "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!-- fixme:不能在activiti.cfg.xml中通过导入jdbc.properties然后${jdbc.url}的方式配置druid-->
+<!--
+    fixme:不能在activiti.cfg.xml中通过导入jdbc.properties然后${jdbc.url}的方式配置druid
+        Spring容器是采用反射扫描的发现机制，通过标签的命名空间实例化实例
+-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://82.157.138.64:3306/activiti" />

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/1_springProject/1_springProject.iml" filepath="$PROJECT_DIR$/1_springProject/1_springProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1_quickstart/1_quickstart.iml" filepath="$PROJECT_DIR$/1_quickstart/1_quickstart.iml" />
     </modules>
   </component>
 </project>
