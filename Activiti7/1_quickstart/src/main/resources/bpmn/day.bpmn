@@ -5,7 +5,7 @@
                   xmlns:activiti="http://activiti.org/bpmn" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_03io3g1"
                   targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.9.0"
                   modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
-<bpmn:process id="dayAfterModify" isExecutable="true">
+<bpmn:process id="dayAfterModify" name="dayAfterModify" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>Flow_0aslzjz</bpmn:outgoing>
     </bpmn:startEvent>
