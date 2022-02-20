@@ -15,6 +15,7 @@ import java.io.*;
 import java.util.List;
 
 import static java.lang.Thread.sleep;
+import static org.activiti.engine.impl.util.ProcessDefinitionUtil.getProcessDefinition;
 
 /**
  * @Author: 赵鑫
@@ -31,7 +32,7 @@ public class ActivitiTest {
         processEngine = ProcessEngines.getDefaultProcessEngine();
     }
 
-    public ProcessDefinition getDeploymentDefinitionByKey(String processDefinitionKey) {
+    public ProcessDefinition getProcessDefinitionByKey(String processDefinitionKey) {
         RepositoryService repositoryService = processEngine.getRepositoryService();
         ProcessDefinitionQuery processDefinitionQuery = repositoryService.createProcessDefinitionQuery();
         List<ProcessDefinition> processDefinitionList = processDefinitionQuery
@@ -90,12 +91,16 @@ public class ActivitiTest {
      */
     @Test
     public void startInstance() {
-        RuntimeService runtime = processEngine.getRuntimeService();
-        ProcessInstance process = runtime.startProcessInstanceByKey(processKey);
+        if (getProcessDefinitionByKey(processKey).isSuspended()) {
+            System.out.println("流程已挂起,无法启动流程");
+        } else {
+            RuntimeService runtime = processEngine.getRuntimeService();
+            ProcessInstance process = runtime.startProcessInstanceByKey(processKey);
 
-        System.out.println("流程部署的ID：" + process.getDeploymentId());
-        System.out.println("流程定义的Key：" + process.getProcessDefinitionId());
-        System.out.println("流程实例的ID：" + process.getId());
+            System.out.println("流程部署的ID：" + process.getDeploymentId());
+            System.out.println("流程定义的Key：" + process.getProcessDefinitionId());
+            System.out.println("流程实例的ID：" + process.getId());
+        }
     }
 
     /**
@@ -253,7 +258,7 @@ public class ActivitiTest {
     public void deleteProcessDefinitionTest() {
         RepositoryService repositoryService = processEngine.getRepositoryService();
         // 获取流程部署id
-        String processDefinitionId = getDeploymentDefinitionByKey(processKey).getDeploymentId();
+        String processDefinitionId = getProcessDefinitionByKey(processKey).getDeploymentId();
         // 删除流程定义 第二个参数true:级联删除,会先删除没有完成的流程结点，最后就可以删除流程定义信息    默认false
         repositoryService.deleteDeployment(processDefinitionId, true);
     }
@@ -276,18 +281,18 @@ public class ActivitiTest {
     @Test
     public void getFileTest() throws Exception {
         //根据key获取流程部署信息
-        ProcessDefinition processDefinition = getDeploymentDefinitionByKey(processKey);
+        ProcessDefinition processDefinition = getProcessDefinitionByKey(processKey);
         String pngName = processDefinition.getDiagramResourceName();
         String xmlName = processDefinition.getResourceName();
         String deploymentId = processDefinition.getDeploymentId();
         // 根据流程部署id和资源名,获取输入流
         RepositoryService repositoryService = processEngine.getRepositoryService();
-        String path=System.getProperty("user.dir");
+        String path = System.getProperty("user.dir");
         if (pngName != null) {
             InputStream pngInputStream = repositoryService.getResourceAsStream(deploymentId, pngName);
             // 构造输出流
-            File file=new File(path+"\\download\\"+pngName);
-            if(!file.exists()){
+            File file = new File(path + "\\download\\" + pngName);
+            if (!file.exists()) {
                 // 先得到文件的上级目录，并创建上级目录
                 boolean mkdirs = file.getParentFile().mkdirs();
                 // 再创建文件
@@ -301,8 +306,8 @@ public class ActivitiTest {
         }
         if (xmlName != null) {
             InputStream xmlInputStream = repositoryService.getResourceAsStream(deploymentId, xmlName);
-            File file=new File(path+"\\download\\"+xmlName);
-            if(!file.exists()){
+            File file = new File(path + "\\download\\" + xmlName);
+            if (!file.exists()) {
                 boolean mkdirs = file.getParentFile().mkdirs();
                 boolean newFile = file.createNewFile();
             }
@@ -311,6 +316,56 @@ public class ActivitiTest {
             xmlOutputStream.close();
             xmlInputStream.close();
         }
+    }
 
+    /**
+     * notice 挂起/激活 流程实例
+     * 得到RepositoryService对象
+     * 获得流程定义的查询对象
+     * 判断当前流程定义的实例 是否都挂起
+     * 更改状态,act_ru_task和act_re_procdef表中,SUSPENSION_STATE字段值为1:激活,2:挂起
+     */
+    @Test
+    public void suspendProcessInstanceAllTest() {
+        RepositoryService repositoryService = processEngine.getRepositoryService();
+        ProcessDefinition processDefinition = getProcessDefinitionByKey(processKey);
+        boolean isSuspended = processDefinition.isSuspended();
+        if (isSuspended) {
+            //挂起中,进行激活 参数:流程key,是否激活,激活时间
+            repositoryService.activateProcessDefinitionByKey(processKey, true, null);
+            System.out.println("流程" + processKey + "已激活");
+        } else {
+            repositoryService.suspendProcessDefinitionByKey(processKey, true, null);
+            System.out.println("流程" + processKey + "已挂起");
+        }
+    }
+
+    /**
+     * notice 挂起/激活 单个流程实例
+     * 获得RuntimeService对象
+     * 根据 流程实例id 得到 流程实例对象
+     * 判断流程实例的挂起状态
+     * 挂起/激活 流程实例
+     */
+    @Test
+    public void suspendSingleProcessInstanceTest() {
+        Task task = processEngine.getTaskService().createTaskQuery()
+                .processDefinitionKey(processKey)
+                .taskAssignee(assignees[0])
+                .list().get(0);
+        String processInstanceId = task.getProcessInstanceId();
+
+        RuntimeService runtimeService = processEngine.getRuntimeService();
+        ProcessInstance process = runtimeService.createProcessInstanceQuery()
+                .processInstanceId(processInstanceId)
+                .singleResult();
+        boolean isSuspended = process.isSuspended();
+        if (isSuspended) {
+            runtimeService.activateProcessInstanceById(processInstanceId);
+            System.out.println("activate " + task.getAssignee() + " " + task.getName() + processInstanceId);
+        } else {
+            runtimeService.suspendProcessInstanceById(processInstanceId);
+            System.out.println("suspend " + task.getAssignee() + " " + task.getName() + processInstanceId);
+        }
     }
 }
