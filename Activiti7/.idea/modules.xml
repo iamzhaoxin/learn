@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/1_quickstart/1_quickstart.iml" filepath="$PROJECT_DIR$/1_quickstart/1_quickstart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2_UEL/2_UEL.iml" filepath="$PROJECT_DIR$/2_UEL/2_UEL.iml" />
     </modules>
   </component>
 </project>
