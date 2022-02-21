@@ -4,15 +4,13 @@
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <datasource-mapping>
-          <factory-entry name="2_UEL" />
-        </datasource-mapping>
+        <datasource-mapping />
         <naming-strategy-map />
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
       <configuration>
-        <fileset id="fileset" name="Activiti.cfg" removed="false">
+        <fileset id="fileset" name="TaskListener" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/activiti.cfg.xml</file>
         </fileset>
       </configuration>

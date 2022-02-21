@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="1_quickstart" />
+        <module name="3_task_listener" />
         <module name="2_UEL" />
       </profile>
     </annotationProcessing>
@@ -14,6 +15,7 @@
       <module name="1_introduct" target="17" />
       <module name="1_quickstart" target="17" />
       <module name="2_UEL" target="17" />
+      <module name="3_task_listener" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

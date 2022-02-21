@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/1_quickstart/1_quickstart.iml" filepath="$PROJECT_DIR$/1_quickstart/1_quickstart.iml" />
       <module fileurl="file://$PROJECT_DIR$/2_UEL/2_UEL.iml" filepath="$PROJECT_DIR$/2_UEL/2_UEL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3_task_listener/3_task_listener.iml" filepath="$PROJECT_DIR$/3_task_listener/3_task_listener.iml" />
     </modules>
   </component>
 </project>
