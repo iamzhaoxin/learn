@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/1_quickstart/1_quickstart.iml" filepath="$PROJECT_DIR$/1_quickstart/1_quickstart.iml" />
       <module fileurl="file://$PROJECT_DIR$/2_UEL/2_UEL.iml" filepath="$PROJECT_DIR$/2_UEL/2_UEL.iml" />
       <module fileurl="file://$PROJECT_DIR$/3_task_listener/3_task_listener.iml" filepath="$PROJECT_DIR$/3_task_listener/3_task_listener.iml" />
+      <module fileurl="file://$PROJECT_DIR$/4_process_variable/4_process_variable.iml" filepath="$PROJECT_DIR$/4_process_variable/4_process_variable.iml" />
     </modules>
   </component>
 </project>

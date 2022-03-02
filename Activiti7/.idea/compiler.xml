@@ -2,13 +2,15 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="1_quickstart" />
         <module name="3_task_listener" />
         <module name="2_UEL" />
+        <module name="1_quickstart" />
+        <module name="4_process_variable" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,6 +18,7 @@
       <module name="1_quickstart" target="17" />
       <module name="2_UEL" target="17" />
       <module name="3_task_listener" target="17" />
+      <module name="4_process_variable" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
