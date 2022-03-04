@@ -11,6 +11,7 @@
         <module name="2_UEL" />
         <module name="1_quickstart" />
         <module name="4_process_variable" />
+        <module name="5_candidate_user" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +20,7 @@
       <module name="2_UEL" target="17" />
       <module name="3_task_listener" target="17" />
       <module name="4_process_variable" target="17" />
+      <module name="5_candidate_user" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

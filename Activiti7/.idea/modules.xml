@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/2_UEL/2_UEL.iml" filepath="$PROJECT_DIR$/2_UEL/2_UEL.iml" />
       <module fileurl="file://$PROJECT_DIR$/3_task_listener/3_task_listener.iml" filepath="$PROJECT_DIR$/3_task_listener/3_task_listener.iml" />
       <module fileurl="file://$PROJECT_DIR$/4_process_variable/4_process_variable.iml" filepath="$PROJECT_DIR$/4_process_variable/4_process_variable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/5_candidate_user/5_candidate_user.iml" filepath="$PROJECT_DIR$/5_candidate_user/5_candidate_user.iml" />
     </modules>
   </component>
 </project>
