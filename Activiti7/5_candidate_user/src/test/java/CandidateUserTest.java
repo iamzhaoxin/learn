@@ -90,5 +90,10 @@ public class CandidateUserTest {
         System.out.println(assignee[0]+" 交接任务："+task.getName()+" 给："+assignee[1]);
     }
 
+    @Test
+    void completeTask(){
+        Task task = activitiTools.getTaskService().createTaskQuery().taskAssignee("noUser").singleResult();
+        activitiTools.getTaskService().complete(task.getId());
+    }
 
 }

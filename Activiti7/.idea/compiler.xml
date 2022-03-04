@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="3_task_listener" />
         <module name="2_UEL" />
+        <module name="6_gateway" />
         <module name="1_quickstart" />
         <module name="4_process_variable" />
         <module name="5_candidate_user" />
@@ -21,6 +22,7 @@
       <module name="3_task_listener" target="17" />
       <module name="4_process_variable" target="17" />
       <module name="5_candidate_user" target="17" />
+      <module name="6_gateway" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
