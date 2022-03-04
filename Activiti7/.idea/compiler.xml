@@ -12,6 +12,7 @@
         <module name="6_gateway" />
         <module name="1_quickstart" />
         <module name="4_process_variable" />
+        <module name="7_activiti_Spring" />
         <module name="5_candidate_user" />
       </profile>
     </annotationProcessing>
@@ -23,6 +24,7 @@
       <module name="4_process_variable" target="17" />
       <module name="5_candidate_user" target="17" />
       <module name="6_gateway" target="17" />
+      <module name="7_activiti_Spring" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

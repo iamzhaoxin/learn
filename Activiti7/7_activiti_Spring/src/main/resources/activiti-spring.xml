@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:property-placeholder location="jdbc.properties"/>
+
+    <!--数据源-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!--事务管理-->
+    <bean id="transactionManger" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!--Advice(通知/增强): 拦截到Joinpoint后要做的事情(增强的功能)-->
+    <tx:advice id="transactionControl" transaction-manager="transactionManger">
+        <tx:attributes>
+            <!--传播行为-->
+            <tx:method name="save*"/>
+            <tx:method name="insert*"/>
+            <tx:method name="delete*"/>
+            <tx:method name="update*"/>
+            <tx:method name="find*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="get*" propagation="SUPPORTS" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- notice 工作流引擎配置bean-->
+    <bean id="processEngineConfiguration" class="org.activiti.spring.SpringProcessEngineConfiguration">
+        <property name="dataSource" ref="dataSource"/>  <!--数据源-->
+        <property name="transactionManager" ref="transactionManger"/>   <!--spring事务管理器-->
+        <!--
+            notice databaseSchemaUpdate的取值内容
+                false：默认值，对比数据库表中保存的版本，如果没有表或版本不一致，会抛出异常（生产环境
+                true：对数据库中所有表更新，表不存在则自动创建（开发时常用
+                create-drop：activiti启动时创建表，手动关闭引擎时删除表（单元测试常用
+                drop-create：activiti启动时删除旧表，再创建新表（不需要手动关引擎  (空数据库使用这个可能无法创建25张表
+        -->
+        <property name="databaseSchemaUpdate" value="true"/>
+    </bean>
+
+    <!-- 流程引擎-->
+    <bean id="processEngine" class="org.activiti.spring.ProcessEngineFactoryBean"
+          p:processEngineConfiguration-ref="processEngineConfiguration"/>
+
+    <!-- 资源服务RepositoryService-->
+    <bean id="repositoryService" factory-bean="processEngine" factory-method="getRepositoryService"/>
+    <!-- 运行服务RuntimeService-->
+    <bean id="runtimeService" factory-bean="processEngine" factory-method="getRuntimeService"/>
+    <!-- 任务管理TaskService-->
+    <bean id="taskService" factory-bean="processEngine" factory-method="getTaskService"/>
+    <!-- 历史管理HistoryService-->
+    <bean id="historyService" factory-bean="processEngine" factory-method="getHistoryService"/>
+
+
+
+</beans>
