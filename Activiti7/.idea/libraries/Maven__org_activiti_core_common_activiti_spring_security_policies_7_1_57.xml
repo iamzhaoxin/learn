@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.activiti.core.common:activiti-spring-security-policies:7.1.57">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../../MySoftware/apache-maven-3.8.4/repository/org/activiti/core/common/activiti-spring-security-policies/7.1.57/activiti-spring-security-policies-7.1.57.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../../../../MySoftware/apache-maven-3.8.4/repository/org/activiti/core/common/activiti-spring-security-policies/7.1.57/activiti-spring-security-policies-7.1.57-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../../../../MySoftware/apache-maven-3.8.4/repository/org/activiti/core/common/activiti-spring-security-policies/7.1.57/activiti-spring-security-policies-7.1.57-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

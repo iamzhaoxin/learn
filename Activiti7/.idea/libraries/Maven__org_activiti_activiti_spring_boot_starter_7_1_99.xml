@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.activiti:activiti-spring-boot-starter:7.1.99">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../../MySoftware/apache-maven-3.8.4/repository/org/activiti/activiti-spring-boot-starter/7.1.99/activiti-spring-boot-starter-7.1.99.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../../../../MySoftware/apache-maven-3.8.4/repository/org/activiti/activiti-spring-boot-starter/7.1.99/activiti-spring-boot-starter-7.1.99-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../../../../MySoftware/apache-maven-3.8.4/repository/org/activiti/activiti-spring-boot-starter/7.1.99/activiti-spring-boot-starter-7.1.99-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

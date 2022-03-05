@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/5_candidate_user/5_candidate_user.iml" filepath="$PROJECT_DIR$/5_candidate_user/5_candidate_user.iml" />
       <module fileurl="file://$PROJECT_DIR$/6_gateway/6_gateway.iml" filepath="$PROJECT_DIR$/6_gateway/6_gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/7_activiti_Spring/7_activiti_Spring.iml" filepath="$PROJECT_DIR$/7_activiti_Spring/7_activiti_Spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/8_activiti_springboot/8_activiti_springboot.iml" filepath="$PROJECT_DIR$/8_activiti_springboot/8_activiti_springboot.iml" />
     </modules>
   </component>
 </project>
