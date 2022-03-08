@@ -9,3 +9,9 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto # 也可以在User.java中，对private String id;添加注解@TableId(type=IdType.AUTO)
+      table-prefix: buct_ # 全局的表名前缀
+  mapper-locations: classpath*:mybatis/*.xml  # 配置使用自定义xml文件（UserMapper.xml）
+  configuration:
+    map-underscore-to-camel-case: true  # 是否开启 命名自动映射（数据库字段名A_B映射到实体类属性名aB），该参数不能与config-location同时存在
+#  config-location: classpath:mybatis-config.xml # 加载mybatis配置文件
+#  type-aliases-package: com.example.quickstart.pojo  #然后resultType="com.example.quickstart.pojo.User"可以简写为resultType="User"

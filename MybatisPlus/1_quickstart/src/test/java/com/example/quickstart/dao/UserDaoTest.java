@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 //@SpringBootTest(classes = Application.class)
@@ -89,4 +90,30 @@ public class UserDaoTest {
         System.out.println(userPage.getRecords());
         System.out.println("数据总条数: " + userPage.getTotal());
     }
+
+    /**
+     * 测试使用自定义xml文件和接口代理
+     */
+    @Test
+    void testCustomXml() {
+        User user=userDao.findById(23);
+        System.out.println(user);
+    }
+
+    @Test
+    void testOrOrderDesc() {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        // OR 逻辑
+        wrapper.eq("id","22").or().eq("password","123456");
+        // 排序
+        wrapper.orderByDesc("id");
+        // 只返回指定字段
+        wrapper.select("id","money");
+
+        List<User> userList = userDao.selectList(wrapper);
+        for(User user : userList){
+            System.out.println(user);
+        }
+    }
+
 }
