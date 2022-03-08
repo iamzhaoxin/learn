@@ -8,4 +8,4 @@ spring:
 mybatis-plus:
   global-config:
     db-config:
-      id-type: auto
+      id-type: auto # 也可以在User.java中，对private String id;添加注解@TableId(type=IdType.AUTO)
