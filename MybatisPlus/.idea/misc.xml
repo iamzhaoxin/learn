@@ -4,6 +4,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/1_quickstart/pom.xml" />
+        <option value="$PROJECT_DIR$/2_active_record/pom.xml" />
       </list>
     </option>
   </component>
