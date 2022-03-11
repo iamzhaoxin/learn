@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/1_quickstart/1_quickstart.iml" filepath="$PROJECT_DIR$/1_quickstart/1_quickstart.iml" />
       <module fileurl="file://$PROJECT_DIR$/2_active_record/2_active_record.iml" filepath="$PROJECT_DIR$/2_active_record/2_active_record.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3_plugins/3_plugins.iml" filepath="$PROJECT_DIR$/3_plugins/3_plugins.iml" />
     </modules>
   </component>
 </project>
