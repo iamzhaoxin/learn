@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="4_myBaseMapper" />
         <module name="2_active_record" />
         <module name="3_plugins" />
         <module name="1_quickstart" />
@@ -16,6 +17,7 @@
       <module name="1_quickstart" target="17" />
       <module name="2_active_record" target="17" />
       <module name="3_plugins" target="17" />
+      <module name="4_myBaseMapper" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -23,6 +25,7 @@
       <module name="1_quickstart" options="-parameters" />
       <module name="2_active_record" options="-parameters" />
       <module name="3_plugins" options="-parameters" />
+      <module name="4_myBaseMapper" options="-parameters" />
     </option>
   </component>
 </project>

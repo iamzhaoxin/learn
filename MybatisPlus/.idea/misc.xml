@@ -6,6 +6,7 @@
         <option value="$PROJECT_DIR$/1_quickstart/pom.xml" />
         <option value="$PROJECT_DIR$/2_active_record/pom.xml" />
         <option value="$PROJECT_DIR$/3_plugins/pom.xml" />
+        <option value="$PROJECT_DIR$/4_myBaseMapper/pom.xml" />
       </list>
     </option>
   </component>
