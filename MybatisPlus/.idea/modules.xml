@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/2_active_record/2_active_record.iml" filepath="$PROJECT_DIR$/2_active_record/2_active_record.iml" />
       <module fileurl="file://$PROJECT_DIR$/3_plugins/3_plugins.iml" filepath="$PROJECT_DIR$/3_plugins/3_plugins.iml" />
       <module fileurl="file://$PROJECT_DIR$/4_myBaseMapper/4_myBaseMapper.iml" filepath="$PROJECT_DIR$/4_myBaseMapper/4_myBaseMapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/5_other/5_other.iml" filepath="$PROJECT_DIR$/5_other/5_other.iml" />
     </modules>
   </component>
 </project>
