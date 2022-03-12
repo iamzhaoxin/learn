@@ -1,0 +1,19 @@
+# notice 多文件 配置 多应用环境
+#spring:
+#  profiles:
+#    active: dev # 对应application-xxxxx.yml中的xxxxx
+#    include: devDB,devRedis,devMVC  # notice 根据功能对配置文件拆分，使用include加载多个环境，用逗号分割,后面的覆盖前面的
+
+# springboot2.4以后：
+spring:
+  profiles:
+    active: dev
+    group:
+      "dev": devDB,devRedis,devMVC
+      "test":
+
+# notice Maven与SpringBoot多环境兼容：
+#   1. Maven的pom.xml中设置多环境属性
+#   2. SpringBoot的配置文件中引用Maven属性
+#   3. 执行Maven打包指令，生成.jar
+# fixme：IDEA的bug：Maven与SpringBoot多环境兼容时，如果直接从IDEA启动，无法生效，需要在Maven中clean-compile再启动

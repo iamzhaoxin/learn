@@ -1,0 +1,39 @@
+# notice 单文件 配置 多应用环境
+spring:
+  profiles:
+    active: dev
+---
+# 生产环境
+spring:
+  profiles: pro
+server:
+  port: 443
+---
+# 开发环境
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://82.157.138.64:3306/test
+      username: root
+      password: 123456
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+server:
+  port: 80
+logging:
+  level:
+    root: info  # 在logging-level中，以键值对的形式设置日志级别（root：info）
+---
+# 开发环境
+spring:
+  config:
+    activate:
+      on-profile: test
+server:
+  port: 81
