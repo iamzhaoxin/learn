@@ -6,7 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/02_baseConfiguration_junit/02_baseConfiguration_junit.iml" filepath="$PROJECT_DIR$/02_baseConfiguration_junit/02_baseConfiguration_junit.iml" />
       <module fileurl="file://$PROJECT_DIR$/03_mybatis/03_mybatis.iml" filepath="$PROJECT_DIR$/03_mybatis/03_mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/04_SSM/04_SSM.iml" filepath="$PROJECT_DIR$/04_SSM/04_SSM.iml" />
-      <module fileurl="file://$PROJECT_DIR$/5_operation_maintain/5_operation_maintain.iml" filepath="$PROJECT_DIR$/5_operation_maintain/5_operation_maintain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05_operation_maintain_multi_environment/05_operation_maintain_multi_environment.iml" filepath="$PROJECT_DIR$/05_operation_maintain_multi_environment/05_operation_maintain_multi_environment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06_operation_maintain_log/06_operation_maintain_log.iml" filepath="$PROJECT_DIR$/06_operation_maintain_log/06_operation_maintain_log.iml" />
     </modules>
   </component>
 </project>

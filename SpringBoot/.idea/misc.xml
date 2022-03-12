@@ -10,6 +10,9 @@
         <option value="$PROJECT_DIR$/03_mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/04_SSM/pom.xml" />
         <option value="$PROJECT_DIR$/5_operation_maintain/pom.xml" />
+        <option value="$PROJECT_DIR$/5_operation_maintain_multi_environment/pom.xml" />
+        <option value="$PROJECT_DIR$/06_operation_maintain_log/pom.xml" />
+        <option value="$PROJECT_DIR$/05_operation_maintain_multi_environment/pom.xml" />
       </list>
     </option>
   </component>

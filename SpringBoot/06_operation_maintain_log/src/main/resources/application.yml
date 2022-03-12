@@ -1,0 +1,15 @@
+logging:
+  group:
+    user: com.example.operation_maintain_log,com.sun.net  # notice 设置日志组，逗号分割
+  level:
+    root: info
+    user: debug # 为对应组设置日志级别
+    com.example.operation_maintain_log: trace # 为对应包设置日志级别
+#  pattern:
+#    console: "%d %clr(%5p) --- [%16t] %clr(%-40.40c){cyan} : %m %n"  # 日志输出格式
+  file:
+    name: log/server.log  # 保存位置，根目录是模块路径
+  logback:
+    rollingpolicy:
+      max-file-size: 4KB
+      file-name-pattern: log/server.%d{yyy-MM-dd}.%i.log

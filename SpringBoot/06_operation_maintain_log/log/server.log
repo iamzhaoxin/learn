@@ -1,0 +1,5 @@
+2022-03-12 23:22:58.451  INFO 21928 --- [main] c.e.o.ApplicationTests                   : Starting ApplicationTests using Java 17.0.1 on Zn with PID 21928 (started by zhaox in C:\Users\zhaox\Documents\IDEA Projects\learn\SpringBoot\06_operation_maintain_log)
+2022-03-12 23:22:58.452 DEBUG 21928 --- [main] c.e.o.ApplicationTests                   : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-03-12 23:22:58.453  INFO 21928 --- [main] c.e.o.ApplicationTests                   : No active profile set, falling back to 1 default profile: "default"
+2022-03-12 23:22:58.915  INFO 21928 --- [main] c.e.o.ApplicationTests                   : Started ApplicationTests in 0.9 seconds (JVM running for 1.917)
+2022-03-12 23:22:59.384 ERROR 21928 --- [main] c.e.o.ApplicationTests                   : message

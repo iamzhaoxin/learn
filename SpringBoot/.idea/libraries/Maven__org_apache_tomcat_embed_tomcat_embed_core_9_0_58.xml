@@ -1,4 +1,4 @@
-<component name="libraryTable">
+﻿<component name="libraryTable">
   <library name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.58">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../../../../../../MySoftware/apache-maven-3.8.4/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.58/tomcat-embed-core-9.0.58.jar!/" />
