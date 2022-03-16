@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/04_SSM/04_SSM.iml" filepath="$PROJECT_DIR$/04_SSM/04_SSM.iml" />
       <module fileurl="file://$PROJECT_DIR$/05_operation_maintain_multi_environment/05_operation_maintain_multi_environment.iml" filepath="$PROJECT_DIR$/05_operation_maintain_multi_environment/05_operation_maintain_multi_environment.iml" />
       <module fileurl="file://$PROJECT_DIR$/06_operation_maintain_log/06_operation_maintain_log.iml" filepath="$PROJECT_DIR$/06_operation_maintain_log/06_operation_maintain_log.iml" />
+      <module fileurl="file://$PROJECT_DIR$/07_advance_configuration/07_advance_configuration.iml" filepath="$PROJECT_DIR$/07_advance_configuration/07_advance_configuration.iml" />
     </modules>
   </component>
 </project>

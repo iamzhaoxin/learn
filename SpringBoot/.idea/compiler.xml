@@ -8,11 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="01_quickstart_aliyun" />
-        <module name="05_operation_maintain_multi_environment" />
         <module name="04_SSM" />
+        <module name="02_baseConfiguration_junit" />
+        <module name="07_advance_configuration" />
+        <module name="05_operation_maintain_multi_environment" />
         <module name="03_mybatis" />
         <module name="06_operation_maintain_log" />
-        <module name="02_baseConfiguration_junit" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,6 +25,7 @@
       <module name="04_SSM" target="17" />
       <module name="05_operation_maintain_multi_environment" target="17" />
       <module name="06_operation_maintain_log" target="17" />
+      <module name="07_advance_configuration" target="17" />
       <module name="5_operation_maintain_multi_environment" target="17" />
       <module name="operation_maintain" target="17" />
     </bytecodeTargetLevel>
@@ -37,6 +39,7 @@
       <module name="04_SSM" options="-parameters" />
       <module name="05_operation_maintain_multi_environment" options="-parameters" />
       <module name="06_operation_maintain_log" options="-parameters" />
+      <module name="07_advance_configuration" options="-parameters" />
       <module name="5_operation_maintain_multi_environment" options="-parameters" />
       <module name="operation_maintain" options="-parameters" />
     </option>
