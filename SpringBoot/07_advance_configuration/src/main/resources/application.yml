@@ -1,5 +1,5 @@
 servers:
-  port: 8080
+  port: 8080  # fixme 如果用int接收，可能接收到八进制（0127接收为87）  方法：加双引号用String接收
   ip: 127.0.0.1
   time: 3000ms
   timeOut: 50
