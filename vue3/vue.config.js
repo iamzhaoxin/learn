@@ -6,7 +6,7 @@ module.exports = defineConfig({
         host: "localhost",
         port: 80,
         // 运行项目自动打开浏览器
-        open: true,
+        open: false,
         // 跨域代理（后端的端口：8080）
         // public有的资源：不跨域；否则跨域（优先匹配前端资源）
         /*proxy: 'http://localhost:8080',*/
