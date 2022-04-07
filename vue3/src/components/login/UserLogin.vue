@@ -1,6 +1,6 @@
 <template>
   <div class="login-body">
-    <div class="login-container">
+    <div class="login-container" style="margin-top: 200px">
       <div class="head">
         <img class="logo" src="https://s.weituibao.com/1582958061265/mlogo.png" alt="logo"/>
         <div class="name">
@@ -18,6 +18,7 @@
         </el-form-item>
         <el-form-item>
           <el-button style="width: 100%" type="primary" @click="submitForm">立即登录</el-button>
+          <el-checkbox v-model="autoLogin" @change="changeAutoLogin">下次自动登录</el-checkbox>
         </el-form-item>
       </el-form>
     </div>
@@ -27,9 +28,10 @@
 <script>
 import axios from '@/utils/axios'
 import {reactive, ref, toRefs} from 'vue'
-import {localSet} from '@/utils'
+import {localGet, localRemove, localSet} from '@/utils'
 import qs from 'qs';
 import router from "@/router";
+import {ElMessage} from "element-plus";
 
 export default {
   name: 'UserLogin',
@@ -40,6 +42,7 @@ export default {
         username: '',
         password: ''
       },
+      autoLogin:false,
       rules: {
         username: [
           {required: 'true', message: '账户不能为空', trigger: 'blur'}
@@ -49,6 +52,16 @@ export default {
         ]
       }
     })
+    const changeAutoLogin=()=>{
+      console.log(this)
+      !state.autoLogin
+      if(state.autoLogin){
+        let ms=new Date();
+        localSet('autoLogin',ms)
+      }else{
+        localRemove('autoLogin')
+      }
+    }
     const submitForm = async () => {
       loginForm.value.validate((valid) => {
         if (valid) {
@@ -66,6 +79,7 @@ export default {
                 }
               })
               .catch((err) => {
+                ElMessage.error(err.toString())
                 console.log(err)
               })
         } else {
@@ -80,8 +94,14 @@ export default {
     return {
       ...toRefs(state),
       loginForm,
+      changeAutoLogin,
       submitForm,
       resetForm
+    }
+  },
+  mounted() {
+    if(localGet('autoLogin')){
+      this.autoLogin=true
     }
   }
 }

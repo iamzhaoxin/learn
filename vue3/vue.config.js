@@ -3,7 +3,6 @@ module.exports = defineConfig({
     transpileDependencies: true,
     devServer: {
         // 项目运行地址和端口
-        host: "localhost",
         port: 80,
         // 运行项目自动打开浏览器
         open: false,

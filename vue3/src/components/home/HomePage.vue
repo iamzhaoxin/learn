@@ -1,8 +1,10 @@
 <template>
-  <el-container class="layout-container-demo" style="height:100%; border: 1px solid #eee">
+  <el-container class="layout-container">
     <GlobalAside/>
     <el-container>
-      <GlobalHeader/>
+      <el-header class="header">
+        <GlobalHeader/>
+      </el-header>
       <HomeDashboard/>
     </el-container>
   </el-container>
@@ -24,5 +26,16 @@ export default {
 </script>
 
 <style scoped>
+.header {
+  height: 5%;
+  padding-left: 0;
+  padding-right: 0;
+  /*background-image: url('../../assets/img.png');*/
+  background-color: lightskyblue;
+}
 
+.layout-container {
+  height: 100%;
+  border: 1px solid #eee
+}
 </style>

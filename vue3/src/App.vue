@@ -3,9 +3,18 @@
 </template>
 
 <script>
+import {localGet, localRemove} from "@/utils";
+
 
 export default {
   name: 'App',
+  setup() {
+    window.onbeforeunload = function (){
+      if(localGet('autoLogin')===null){
+        localRemove('token')
+      }
+    }
+  }
 }
 </script>
 

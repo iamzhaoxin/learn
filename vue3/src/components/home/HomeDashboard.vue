@@ -1,18 +1,32 @@
 <template>
   <el-main>
-    <el-scrollbar>
-      <el-table :data="tableData">
-        <el-table-column prop="date" label="Date" width="140" />
-        <el-table-column prop="name" label="Name" width="120" />
-        <el-table-column prop="address" label="Address" />
-      </el-table>
-    </el-scrollbar>
+    <el-container>
+      <el-header>
+        <el-container>
+          <el-aside>
+            左侧卡片
+          </el-aside>
+          <el-main>
+            右侧卡片
+          </el-main>
+        </el-container>
+      </el-header>
+      <el-main>“我的申请”</el-main>
+    </el-container>
   </el-main>
 </template>
 
 <script>
 export default {
-  name: "HomeDashboard"
+  name: "HomeDashboard",
+  setup(){
+    const log=()=>{
+      console.log('123')
+    }
+    return{
+      log
+    }
+  }
 }
 </script>
 

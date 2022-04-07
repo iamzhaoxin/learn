@@ -15,7 +15,8 @@
     "js-md5": "^0.7.3",
     "qs": "^6.10.3",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.14"
+    "vue-router": "^4.0.14",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
