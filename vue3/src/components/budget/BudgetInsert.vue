@@ -111,8 +111,11 @@ https://www.vform666.com
         </el-row>
       </el-card>
     </div>
-    <div class="static-content-item">
+    <br>
+    <div class="static-content-item" style="float: right">
       <el-button type="warning" plain>增加资产明细卡片</el-button>
+      <el-button type="info" plain>保存申请</el-button>
+      <el-button type="success" plain>提交申请</el-button>
     </div>
   </el-form>
 
