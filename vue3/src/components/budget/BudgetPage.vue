@@ -1,12 +1,12 @@
 <template>
-  <el-container>
+  <el-container class="layout-container">
     <GlobalAside/>
     <el-container>
       <el-header class="GlobalHeader">
         <GlobalHeader/>
       </el-header>
       <el-main>
-        <HomeDashboard/>
+        <BudgetInsert/>
       </el-main>
     </el-container>
   </el-container>
@@ -15,14 +15,13 @@
 <script>
 import GlobalAside from "@/components/page/GlobalAside";
 import GlobalHeader from "@/components/page/GlobalHeader";
-import HomeDashboard from "@/components/home/HomeDashboard";
-
+import BudgetInsert from "@/components/budget/BudgetInsert";
 export default {
-  name: "HomePage",
+  name: "BudgetPage",
   components: {
+    BudgetInsert,
     GlobalAside,
     GlobalHeader,
-    HomeDashboard,
   }
 }
 </script>

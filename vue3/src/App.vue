@@ -21,3 +21,13 @@ export default {
 <style scoped>
 
 </style>
+
+<style>
+.GlobalHeader {
+  height: 5%;
+  padding-left: 0;
+  padding-right: 0;
+  /*background-image: url('../../assets/img.png');*/
+  background-color: lightskyblue;
+}
+</style>

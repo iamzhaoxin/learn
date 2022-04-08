@@ -21,7 +21,7 @@ const router = createRouter({
         {
             path: '/budget/increase',
             name: 'increaseBudget',
-            component: () => import('../components/budget/IncreaseApply/ApplyIndex')
+            component: () => import('../components/budget/BudgetPage')
         }
     ],
 })
