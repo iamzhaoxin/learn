@@ -1,6 +1,8 @@
 <template>
-  <el-container>
-    <GlobalAside/>
+  <el-container style="height: 100%">
+    <el-aside>
+        <GlobalAside/>
+    </el-aside>
     <el-container>
       <el-header class="GlobalHeader">
         <GlobalHeader/>

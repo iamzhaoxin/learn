@@ -1,4 +1,4 @@
-<template style="height: 100%">
+<template>
   <router-view></router-view>
 </template>
 
