@@ -2,7 +2,6 @@
   <el-main>
 <!--    <el-main>-->
       <el-container>
-<!--        todo 给header固定高度，然后让两个卡片相同高度-->
         <el-header style="height: 300px">
           <el-container style="height: 100%">
             <el-main style="width: 50%;">

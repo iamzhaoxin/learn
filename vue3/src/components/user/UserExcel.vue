@@ -20,41 +20,47 @@
           width="55">
       </el-table-column>
       <el-table-column
-          prop="nickName"
+          prop="userName"
           label="用户名"
       >
       </el-table-column>
       <el-table-column
-          prop="loginName"
+          prop="userNameReal"
           label="姓名"
       >
       </el-table-column>
       <el-table-column
+          prop="userId"
           label="工号"
       >
       </el-table-column>
       <el-table-column
+          prop="userSex"
           label="性别"
       >
       </el-table-column>
       <el-table-column
+          prop="userCellphone"
           label="电话"
       >
       </el-table-column>
       <el-table-column
+          prop="userEmail"
           label="邮箱"
       >
       </el-table-column>
       <el-table-column
+          prop="unitName"
           label="所在单位"
       >
       </el-table-column>
       <el-table-column
+          prop="roleId"
           label="角色"
       >
       </el-table-column>
       <el-table-column
-          prop="createTime"
+          prop="userBirthdate"
           label="出生年月"
       >
       </el-table-column>
