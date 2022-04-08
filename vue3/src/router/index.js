@@ -22,6 +22,11 @@ const router = createRouter({
             path: '/budget/increase',
             name: 'increaseBudget',
             component: () => import('../components/budget/BudgetPage')
+        },
+        {
+            path: '/user/manager',
+            name: 'userManager',
+            component: () => import('../components/user/UserPage')
         }
     ],
 })

@@ -10,11 +10,15 @@
         <module name="01_quickstart_aliyun" />
         <module name="08_test" />
         <module name="04_SSM" />
+        <module name="test" />
         <module name="02_baseConfiguration_junit" />
         <module name="07_advance_configuration" />
+        <module name="operation_maintain" />
+        <module name="operation_maintain_log" />
         <module name="05_operation_maintain_multi_environment" />
         <module name="03_mybatis" />
         <module name="06_operation_maintain_log" />
+        <module name="advance_configuration" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -29,7 +33,10 @@
       <module name="07_advance_configuration" target="17" />
       <module name="08_test" target="1.8" />
       <module name="5_operation_maintain_multi_environment" target="17" />
+      <module name="advance_configuration" target="17" />
       <module name="operation_maintain" target="17" />
+      <module name="operation_maintain_log" target="17" />
+      <module name="test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -44,7 +51,10 @@
       <module name="07_advance_configuration" options="-parameters" />
       <module name="08_test" options="-parameters" />
       <module name="5_operation_maintain_multi_environment" options="-parameters" />
+      <module name="advance_configuration" options="-parameters" />
       <module name="operation_maintain" options="-parameters" />
+      <module name="operation_maintain_log" options="-parameters" />
+      <module name="test" options="-parameters" />
     </option>
   </component>
 </project>

@@ -10,6 +10,10 @@
       <module fileurl="file://$PROJECT_DIR$/06_operation_maintain_log/06_operation_maintain_log.iml" filepath="$PROJECT_DIR$/06_operation_maintain_log/06_operation_maintain_log.iml" />
       <module fileurl="file://$PROJECT_DIR$/07_advance_configuration/07_advance_configuration.iml" filepath="$PROJECT_DIR$/07_advance_configuration/07_advance_configuration.iml" />
       <module fileurl="file://$PROJECT_DIR$/08_test/08_test.iml" filepath="$PROJECT_DIR$/08_test/08_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/07_advance_configuration/advance_configuration.iml" filepath="$PROJECT_DIR$/07_advance_configuration/advance_configuration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05_operation_maintain_multi_environment/operation_maintain.iml" filepath="$PROJECT_DIR$/05_operation_maintain_multi_environment/operation_maintain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06_operation_maintain_log/operation_maintain_log.iml" filepath="$PROJECT_DIR$/06_operation_maintain_log/operation_maintain_log.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08_test/test.iml" filepath="$PROJECT_DIR$/08_test/test.iml" />
     </modules>
   </component>
 </project>

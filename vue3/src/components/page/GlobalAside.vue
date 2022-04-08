@@ -53,7 +53,7 @@
             <template #title>角色用户</template>
             <el-menu-item-group>
               <el-menu-item index="4-2-1">角色管理</el-menu-item>
-              <el-menu-item index="4-2-2">用户管理</el-menu-item>
+              <el-menu-item @click="$router.push('/user/manager')" index="4-2-2">用户管理</el-menu-item>
             </el-menu-item-group>
           </el-sub-menu>
           <el-menu-item index="4-3">品目类别</el-menu-item>

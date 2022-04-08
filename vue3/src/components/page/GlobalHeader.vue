@@ -59,12 +59,4 @@ export default {
   float: right;
   width: 50px
 }
-
-.GlobalHeader {
-  height: 5%;
-  padding-left: 0;
-  padding-right: 0;
-  /*background-image: url('../../assets/img.png');*/
-  background-color: lightskyblue;
-}
 </style>
