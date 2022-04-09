@@ -2,9 +2,37 @@
   <el-card class="guest-container">
     <template #header>
       <div class="header">
-        <el-button type="primary" size="small" icon="el-icon-plus" @click="handleSolve">添加用户</el-button>
-        <el-button type="primary" round size="small" icon="el-icon-plus" @click="handleSolve">Excel导入用户</el-button>
-        <el-button type="danger" size="small" icon="el-icon-delete" @click="handleForbid">删除选中用户</el-button>
+        <el-row>
+          <el-col :span="4">
+            <el-button type="primary" @click="handleSolve">添加用户</el-button>
+          </el-col>
+          <el-col :span="4">
+            <el-popover
+                placement="bottom"
+                title="Title"
+                :width="200"
+                trigger="hover"
+                content="请严格按照模板Excel填写导入"
+            >
+              <template #reference>
+                <el-upload
+                    class="upload-demo"
+                    action="api/user/upload"
+                    :limit="1"
+                    :on-success="uploadSuccessHandler"
+                    :on-error="uploadErrorHandler">
+                  <el-button type="primary">批量导入用户</el-button>
+                </el-upload>
+              </template>
+            </el-popover>
+          </el-col>
+          <el-col :span="4">
+            <el-button type="danger" @click="handleForbid">删除选中用户</el-button>
+          </el-col>
+          <!--          <el-col :span="4"><div class="grid-content bg-purple-light" /></el-col>-->
+          <!--          <el-col :span="4"><div class="grid-content bg-purple" /></el-col>-->
+          <!--          <el-col :span="4"><div class="grid-content bg-purple-light" /></el-col>-->
+        </el-row>
       </div>
     </template>
     <el-table
@@ -125,15 +153,22 @@ export default {
           })
           .then(response => {
             //将分页数据保存
-            state.tableData=response.data.records
-            state.currentPage=response.data.current
-            state.total=response.data.total
-            state.loading=false
+            state.tableData = response.data.records.filter(user=>{
+              if(user.roleId===0){
+                user.roleId='管理员'
+              }else{
+                user.roleId='其他'
+              }
+              return user
+            })
+            state.currentPage = response.data.current
+            state.total = response.data.total
+            state.loading = false
 
             console.log(state.tableData)
           })
           .catch((error) => {
-            console.log("error_UserExcel_129")
+            console.log("error_UserExcel")
             ElMessage.error(error.toString())
             console.log(error)
           })
@@ -146,6 +181,7 @@ export default {
       state.currentPage = val
       getGuestList()
     }
+    /*添加用户*/
     const handleSolve = () => {
       if (!state.multipleSelection.length) {
         ElMessage.error('请选择项')
@@ -158,6 +194,7 @@ export default {
         getGuestList()
       })
     }
+    /*删除选中用户*/
     const handleForbid = () => {
       if (!state.multipleSelection.length) {
         ElMessage.error('请选择项')
@@ -170,6 +207,13 @@ export default {
         getGuestList()
       })
     }
+    const uploadSuccessHandler = () => {
+      ElMessage.success("文件上传成功")
+      this.$forceUpdate()
+    }
+    const uploadErrorHandler = () => {
+      ElMessage.error("上传文件失败")
+    }
     return {
       ...toRefs(state),
       multipleTable,
@@ -177,7 +221,9 @@ export default {
       getGuestList,
       changePage,
       handleSolve,
-      handleForbid
+      handleForbid,
+      uploadSuccessHandler,
+      uploadErrorHandler,
     }
   }
 }

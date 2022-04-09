@@ -66,7 +66,7 @@ export default {
       loginForm.value.validate((valid) => {
         if (valid) {
           axios
-              .post('/api/login', qs.stringify({
+              .post('api/login', qs.stringify({
                 username: state.ruleForm.username || '',
                 password: state.ruleForm.password,
               }))

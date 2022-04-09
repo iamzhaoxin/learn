@@ -15,7 +15,7 @@ module.exports = defineConfig({
             '/api': {
                 target: 'http://localhost:8080',
                 // 为了将请求到服务器的路径 由‘http://ipaddress:80/api/路径’ 改回‘http://ipaddress:80/路径’
-                pathRewrite: {'^/api': ''},
+                // pathRewrite: {'^/api': ''},
                 ws:true,    // 用于支持websocket
                 changeOrigin:true,  // 向后端伪装来源，控制请求头的host头
             }
