@@ -154,6 +154,7 @@ export default {
           .then(response => {
             //将分页数据保存
             state.tableData = response.data.records.filter(user=>{
+              user.userBirthdate=user.userBirthdate.slice(0,10)
               if(user.roleId===0){
                 user.roleId='管理员'
               }else{
