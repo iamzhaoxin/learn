@@ -14,7 +14,7 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
-          <factory-entry name="actSpringBoot" />
+          <factory-entry name="actSpringBoot" value="1603493c-b28f-4588-9b4d-c45c18e2df02" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
@@ -85,8 +85,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.1.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-test:5.1.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.xmlunit:xmlunit-core:2.6.2" level="project" />
-    <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.3.1" level="project" />
-    <orderEntry type="library" name="Maven: javax.activation:javax.activation-api:1.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.activiti:activiti-spring-boot-starter:7.0.0.Beta2" level="project" />
     <orderEntry type="library" name="Maven: org.activiti:activiti-spring-app-process:7.0.0.Beta2" level="project" />
     <orderEntry type="library" name="Maven: org.activiti.core.common:activiti-spring-application:7.0.0.Beta2" level="project" />

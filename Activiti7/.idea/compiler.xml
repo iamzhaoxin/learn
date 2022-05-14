@@ -10,6 +10,7 @@
         <module name="3_task_listener" />
         <module name="2_UEL" />
         <module name="6_gateway" />
+        <module name="activiti_springboot" />
         <module name="1_quickstart" />
         <module name="4_process_variable" />
         <module name="7_activiti_Spring" />
@@ -28,6 +29,7 @@
       <module name="6_gateway" target="17" />
       <module name="7_activiti_Spring" target="17" />
       <module name="8_activiti_springboot" target="17" />
+      <module name="activiti_springboot" target="17" />
       <module name="actSpringBoot" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -35,6 +37,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="8_activiti_springboot" options="-parameters" />
       <module name="actSpringBoot" options="-parameters" />
+      <module name="activiti_springboot" options="-parameters" />
     </option>
   </component>
 </project>

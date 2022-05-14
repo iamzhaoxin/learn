@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/7_activiti_Spring/7_activiti_Spring.iml" filepath="$PROJECT_DIR$/7_activiti_Spring/7_activiti_Spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/8_activiti_springboot/8_activiti_springboot.iml" filepath="$PROJECT_DIR$/8_activiti_springboot/8_activiti_springboot.iml" />
       <module fileurl="file://$PROJECT_DIR$/actSpringBoot/actSpringBoot.iml" filepath="$PROJECT_DIR$/actSpringBoot/actSpringBoot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/8_activiti_springboot/activiti_springboot.iml" filepath="$PROJECT_DIR$/8_activiti_springboot/activiti_springboot.iml" />
     </modules>
   </component>
 </project>
