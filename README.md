@@ -6,7 +6,7 @@
 
 ---
 
-# [buct-graduation-project-learn](https://github.com/iamzhaoxin/learn)
+# [buct-graduation-project-learn](https://github.com/iamzhaoxin/learn/tree/buct-graduation-project-learn)
 
 毕业设计涉及技术的学习、练手代码
 
@@ -17,3 +17,18 @@
 - SpringBoot
 - Activiti 7
 - Vue 3
+
+---
+
+# [xiecheng-financial](https://github.com/iamzhaoxin/learn/tree/xiecheng-financial)
+
+- guava
+- JDK 8
+- http请求原理
+- linux命令
+- mybatis原理
+- SpringMVC
+- SpringBoot
+- 面向接口编程
+- 代码可读性拓展性
+- 编码规范（阿里巴巴编码手册）
