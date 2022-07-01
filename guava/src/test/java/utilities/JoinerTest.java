@@ -19,6 +19,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.fail;
 
 /**
+ * 字符串拼接
  * @Author:  赵鑫
  * @Date: 2022/6/26 21:54
  */
@@ -87,7 +88,7 @@ public class JoinerTest {
 
     @Test
     public void testJoin_On_AppendTo_Writer() {
-        String targetFileName = "guava-joiner.txt";
+        String targetFileName = "src/test/java/utilities/guava-joiner.txt";
         try (FileWriter writer = new FileWriter(targetFileName)) {
             Joiner.on(",").useForNull("DEFAULT").appendTo(writer, stringListWithNullValue);
             assertThat(Files.isFile().test(new File(targetFileName)), equalTo(true));
