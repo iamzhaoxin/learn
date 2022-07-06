@@ -31,7 +31,7 @@ public class ClientThread {
                 printStream.println(msg);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Socket closed");
         }
     }
 
