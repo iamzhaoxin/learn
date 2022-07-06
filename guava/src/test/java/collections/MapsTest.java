@@ -53,6 +53,7 @@ public class MapsTest {
         assertThat(hashMap.size(), is(1));
 
         // multimap: each key may be associated with multiple values
+        // like: Map<T,List<P>>
         LinkedListMultimap<String, String> linkedListMultimap = LinkedListMultimap.create();
         linkedListMultimap.put("1", "1");
         linkedListMultimap.put("1", "2");
