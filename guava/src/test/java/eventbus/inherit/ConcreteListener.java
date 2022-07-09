@@ -11,6 +11,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ConcreteListener extends BaseListener{
 
+    public ConcreteListener() {
+        System.out.println("concrete init");
+    }
+
     @Subscribe
     public void conTask(String event){
         log.info("[{}.{}] Received event [{}].",Thread.currentThread().getStackTrace()[1].getClassName(),

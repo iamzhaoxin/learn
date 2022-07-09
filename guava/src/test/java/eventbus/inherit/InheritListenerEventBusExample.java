@@ -14,5 +14,12 @@ public class InheritListenerEventBusExample {
         eventBus.register(new ConcreteListener());
         eventBus.post("i am a event");
         eventBus.post(666);
+        /*
+         * TODO
+         *  输出顺序为什么是
+         *  CommonListener
+         *  ConcreteListener
+         *  BaseListener
+         */
     }
 }
