@@ -127,7 +127,39 @@ git add new_file_name
 ## 查看提交历史
 
 - `git log`查看提交历史
+  - `git log --pretty=[oneline]|[short]|[full]|[fuller]`不同格式显示提交历史，`oneline`将每个提交放在一行显示
 - `git reflog`查看本地所有命令历史（可用于使用`git reset --hard`后，在本地找回消失的版本的commit id
 
 ## 撤销操作
 
+`git commit --amend` 用新的提交**替换**旧的提交(修补提交)
+
+`git reset HEAD [file]` 取消暂存
+
+`git checkout -- [file]` 用最近提交的file覆盖本地工作区的file
+
+## 远程仓库
+
+`git remote -v`查看远程仓库简写和对应的URL
+
+添加远程仓库 `git remote add [remote_name] [url]`
+
+`git fetch [remote_name]` 拉取远程仓库,不会自动合并或修改
+
+`git push [remote_name] [branch]` 推送到远程仓库
+
+查看远程仓库`git remote show [remote_name]`(简略信息)或`git remote show`(详细信息)
+
+重命名远程仓库 `git remote rename [old_remote_name] [new_remote_name]`
+
+移除远程仓库`git remote [remove]|[rm] [remote_name]`
+
+## 打标签
+
+### 列出标签
+
+`git tag []|[-l]|[--list]`
+
+通配模式匹配标签：`git tag -l "v1.8*"`（-l或--list是强制的）
+
+P58
