@@ -1,7 +1,6 @@
 package eventbus.simple;
 
 import com.google.common.eventbus.Subscribe;
-import com.sun.media.jfxmedia.logging.Logger;
 import lombok.extern.slf4j.Slf4j;
 
 /**

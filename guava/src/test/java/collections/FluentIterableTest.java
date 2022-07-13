@@ -3,6 +3,7 @@ package collections;
 import com.google.common.base.Joiner;
 import com.google.common.base.Optional;
 import com.google.common.collect.FluentIterable;
+import com.google.common.collect.Interner;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 
