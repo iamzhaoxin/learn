@@ -56,6 +56,10 @@
 
 ## 记录更新到仓库
 
+- `git push -u origin develop`加入`-u`参数，可指定当前本地分支的upstream是develop分支，后续默认push到develop分支
+
+  > [Git push与pull的默认行为](https://segmentfault.com/a/1190000002783245)
+
 ### 检查状态
 
 - `git status [-s]|[\-\-short]`得到格式更紧凑的输出

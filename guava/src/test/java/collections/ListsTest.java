@@ -10,6 +10,9 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
+ * ArrayList和LinkedList的add(int index,E element)的时间复杂度都是O(n)
+ * 但Array List可以对整块内存操作(移位)，LinkedList要逐个遍历，所以ArrayList更快
+ *
  * @Author: 赵鑫
  * @Date: 2022/7/4
  */

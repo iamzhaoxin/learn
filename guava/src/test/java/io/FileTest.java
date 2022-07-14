@@ -24,6 +24,14 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
+ * Resources类提供的 处理classpath下资源文件的方法：
+ *  getResource(String) 获得一个资源文件的URL
+ *  toString(URL,Charset)   将一个URL资源转换成字符串
+ *  copy(URL,OutputStream)  将一个URL资源写入字节输出流
+ *  readLines(URL,Charset,LineProcessor)    读取一个URL资源，以换行符分割，接受一个LineProcessor参数对其处理
+ *  asCharSource(URL,Charset)
+ *  asByteSource(URL)
+ *
  * @Author: 赵鑫
  * @Date: 2022/7/2
  */
