@@ -75,7 +75,7 @@ public class StringsCharMatcherTest {
     }
 
     /**
-     * .trimResults()传入CharMatcher参数时，删除所有匹配的字符
+     * .trimResults()传入CharMatcher参数时，从两侧删除所有匹配的字符（不处于两端的字符匹配不到）
      */
     @Test
     public void charMatcher_Spliter(){
