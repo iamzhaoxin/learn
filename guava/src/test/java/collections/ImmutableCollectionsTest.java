@@ -1,10 +1,12 @@
 package collections;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
 import com.google.common.collect.Range;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -19,6 +21,32 @@ import static org.junit.Assert.fail;
  * @Date: 2022/7/4
  */
 public class ImmutableCollectionsTest {
+
+    /**
+     * jdk的不可变集合Collections.unmodifiable(list)，不能对不可变集合操作，但可以对源list操作
+     */
+    @Test
+    public void jdkImmutableTest(){
+        ArrayList<Integer> list = Lists.newArrayList(1, 2, 3);
+        List<Integer> unmodifiableList = Collections.unmodifiableList(list);
+        list.add(99);
+        //unmodifiableList.add(66);
+        System.out.println(unmodifiableList);
+    }
+
+    /**
+     * guava的不可变集合ImmutableList.copyOf(list)，对源list操作，不影响unmodifiableList
+     */
+    @Test
+    public void guavaImmutableTest(){
+        ArrayList<Integer> list = Lists.newArrayList(1, 2, 3);
+        List<Integer> unmodifiableList = ImmutableList.copyOf(list);
+        list.add(99);
+        //unmodifiableList.add(66);
+        System.out.println(unmodifiableList);
+    }
+
+
 
     @Test(expected = UnsupportedOperationException.class)
     public void testOf(){
