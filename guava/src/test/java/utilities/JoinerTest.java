@@ -19,6 +19,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.fail;
 
 /**
+ * 通过本地 toString 方法，而不是直接调用对象的 toString 方法，这种做法提供了空指针保护。
+ *
  * 字符串拼接
  * @Author:  赵鑫
  * @Date: 2022/6/26 21:54

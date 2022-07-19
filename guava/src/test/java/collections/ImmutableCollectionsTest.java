@@ -1,15 +1,9 @@
 package collections;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Ordering;
-import com.google.common.collect.Range;
+import com.google.common.collect.*;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -17,10 +11,28 @@ import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.fail;
 
 /**
+ * 不可变对象:
+ *  - 被不信任的库安全使用
+ *  - 线程安全
+ *  - 不需要支持改变时，节约时间和空间
+ *  - 可以当常量使用
+ *
  * @Author: 赵鑫
  * @Date: 2022/7/4
  */
 public class ImmutableCollectionsTest {
+
+
+    /**
+     * 防御拷贝
+     */
+    class Foo {
+        final ImmutableSet<Object> bars;
+        Foo(Set<Object> bars) {
+            this.bars = ImmutableSet.copyOf(bars); //
+        }
+    }
+
 
     /**
      * jdk的不可变集合Collections.unmodifiable(list)，不能对不可变集合操作，但可以对源list操作
