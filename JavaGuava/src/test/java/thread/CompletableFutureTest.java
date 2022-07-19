@@ -25,10 +25,12 @@ public class CompletableFutureTest {
      */
     @Test
     public void supplyAsyncTest() throws ExecutionException, InterruptedException {
+        // 从下一行就开起了子线程并执行，而不是调用get()的时候开始执行
         CompletableFuture<Double> cf = CompletableFuture.supplyAsync(new Supplier<Double>() {
             @Override
             public Double get() {
                 try {
+                    log.info("begin sleep");
                     Thread.sleep(2000L);
                     log.info("finished sleep");
                 } catch (InterruptedException e) {
@@ -38,6 +40,8 @@ public class CompletableFutureTest {
             }
         });
         Stopwatch stopwatch = Stopwatch.createStarted();
+        Thread.sleep(1500L);
+        log.info("before get");
         log.info("run result: {}", cf.get());
         stopwatch.stop();
         log.info("use time: {}", stopwatch);
