@@ -115,61 +115,116 @@ public class ThreadTest {
      * exception.getCause()
      */
     @Test
-    public void realCauseTest(){
-        ExecutorService executorService= Executors.newSingleThreadExecutor(r -> new Thread(r,"executor"));
-        Future<?> future=executorService.submit(()->{
-           try{
-               throw new IllegalArgumentException("真正的原因");
-           }catch (Exception e){
-               throw new IllegalStateException("虚假的原因",e);
-           }
+    public void realCauseTest() {
+        ExecutorService executorService = Executors.newSingleThreadExecutor(r -> new Thread(r, "executor"));
+        Future<?> future = executorService.submit(() -> {
+            try {
+                throw new IllegalArgumentException("真正的原因");
+            } catch (Exception e) {
+                throw new IllegalStateException("虚假的原因", e);
+            }
         });
 
-        try{
+        try {
             Object o = future.get();
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             log.info("got interrupted while waiting other threads to stop");
-        }catch (ExecutionException e){
-            log.info("虚假的原因：{}",e.getMessage());
-            log.info("可能真实的原因(unwrapped once): {}",e.getCause().getMessage());
-            Throwable t=e;
-            while(t.getCause()!=null){
-                t=t.getCause();
+        } catch (ExecutionException e) {
+            log.info("虚假的原因：{}", e.getMessage());
+            log.info("可能真实的原因(unwrapped once): {}", e.getCause().getMessage());
+            Throwable t = e;
+            while (t.getCause() != null) {
+                t = t.getCause();
             }
-            log.info("一定真实的原因：{}",t.getMessage());
+            log.info("一定真实的原因：{}", t.getMessage());
         }
 
     }
 
     /**
+     * 那么cancel是如何工作的呢？
+     * <p>
+     * 当你想要取消你已提交给执行者的任务，使用Future接口的cancel()方法。
+     * 根据cancel()方法参数和任务的状态不同，这个方法的行为将不同：
+     * 1、如果这个任务已经完成或之前的已经被取消或由于其他原因不能被取消，
+     * 那么这个方法将会返回false并且这个任务不会被取消。
+     * 2、如果这个任务正在等待执行者获取执行它的线程，那么这个任务将被取消而且不会开始他的执行。
+     * 如果这个任务已经正在运行，则视方法的参数情况而定。
+     * cancel()方法接收一个Boolean值参数。
+     * 如果参数为true并且任务正在运行，那么这个任务将被取消。
+     * 如果参数为false并且任务正在运行，那么这个任务将不会被取消。
+     */
+    @Test
+    public void futureCancelTest() throws ExecutionException, InterruptedException {
+        CompletableFuture<String> alive = CompletableFuture.supplyAsync(() -> {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("alive");
+            return "ok";
+            // TODO .exceptionally方法不起作用？
+        }).exceptionally(e -> {
+            System.out.println("e: " + e);
+            return "error";
+        });
+
+        alive.cancel(true);
+        alive.get();
+    }
+
+    //TODO get方法返回的异常 如何捕捉处理？
+    @Test
+    public void futureCancelTest2() throws ExecutionException, InterruptedException {
+        CompletableFuture<String> alive = CompletableFuture.supplyAsync(() -> {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("alive");
+            return "ok";
+        });
+        alive.exceptionally(e -> {
+            System.out.println("e: " + e);
+            return "error";
+        });
+
+        alive.cancel(true);
+        alive.get();
+    }
+
+    /**
      * Executors预置了几种不同类型的ThreadPoolExecutor
-     *  newCachedThreadPool()
-     *  newFixedThreadPool(int)
-     *  newScheduledThreadPool(int)
-     *  SingleThreadExecutor()
-     *
+     * newCachedThreadPool()
+     * newFixedThreadPool(int)
+     * newScheduledThreadPool(int)
+     * SingleThreadExecutor()
      */
     @Test
     public void execute_Submit_Test() throws ExecutionException, InterruptedException {
         // ThreadPoolExecutor
-        ThreadPoolExecutor threadPoolExecutor=new ThreadPoolExecutor(2,10,10L,TimeUnit.SECONDS,new LinkedBlockingQueue<>(20));
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2, 10, 10L, TimeUnit.SECONDS, new LinkedBlockingQueue<>(20));
         Future<Integer> future = threadPoolExecutor.submit(() -> 1 + 2);
         log.info(String.valueOf(future.get()));
-        threadPoolExecutor.execute(() ->log.info("log in ThreadPoolExecutor thread pool"));
+        threadPoolExecutor.execute(() -> log.info("log in ThreadPoolExecutor thread pool"));
 
         ExecutorService executorService = Executors.newCachedThreadPool();
-        executorService.execute(()->log.info("log in executorService thread pool"));
+        executorService.execute(() -> log.info("log in executorService thread pool"));
         /*
             Runnable 接口的实现类 A 声明了一个有参构造函数 A(LinkedList result)
             创建 A 对象的时候传入了 result 对象，这样就能在类 A 的 run() 方法中对 result 进行各种操作了
             result 相当于主线程和子线程之间的桥梁，通过它主子线程可以共享数据
          */
-        LinkedList<Integer> result= Lists.newLinkedList();
-        class A implements Runnable{
+        LinkedList<Integer> result = Lists.newLinkedList();
+        class A implements Runnable {
             final LinkedList<Integer> result;
+
             public A(LinkedList<Integer> result) {
                 this.result = result;
             }
+
             @Override
             public void run() {
                 result.add(1);
@@ -178,7 +233,7 @@ public class ThreadTest {
         }
         Future<LinkedList<Integer>> submitResult = executorService.submit(new A(result), result);
         LinkedList<Integer> resultFromFuture = submitResult.get();
-        log.info("传入的result和返回的Future里的result是同一个对象：{}",result==resultFromFuture);
+        log.info("传入的result和返回的Future里的result是同一个对象：{}", result == resultFromFuture);
     }
 
 }
