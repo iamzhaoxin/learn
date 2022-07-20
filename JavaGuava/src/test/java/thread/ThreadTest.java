@@ -170,25 +170,28 @@ public class ThreadTest {
         alive.get();
     }
 
-    //TODO get方法返回的异常 如何捕捉处理？
     @Test
-    public void futureCancelTest2() throws ExecutionException, InterruptedException {
+    public void futureCancelTest2(){
         CompletableFuture<String> alive = CompletableFuture.supplyAsync(() -> {
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            System.out.println("alive");
+            System.out.println("还活着");
             return "ok";
         });
         alive.exceptionally(e -> {
-            System.out.println("e: " + e);
+            System.out.println("Exception: " + e);
             return "error";
         });
 
         alive.cancel(true);
-        alive.get();
+        try {
+            alive.get();
+        } catch (Exception e) {
+            log.error("{}",e.getClass());
+        }
     }
 
     /**
