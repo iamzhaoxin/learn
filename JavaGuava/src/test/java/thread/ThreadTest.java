@@ -76,7 +76,7 @@ public class ThreadTest {
             } catch (InterruptedException e) {
                 System.out.println("catch InterruptedException");
                 // thread.isInterrupted()方法来检查是否线程被中断，只会获取线程的标志位,而不会清除中断标志位
-                /* TODO
+                /*
                  *  log无法输出？
                  *  执行到logback-classic-1.2.11-sources.jar!/ch/qos/logback/classic/Logger.java:419
                  *  （执行LoggingEvent le = new LoggingEvent(localFQCN, this, level, msg, t, params);时）
@@ -89,6 +89,7 @@ public class ThreadTest {
         thread.start();
         Thread.sleep(1000L);
         thread.interrupt();
+        Thread.sleep(2000L);
     }
 
     /**

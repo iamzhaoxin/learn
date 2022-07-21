@@ -1,7 +1,8 @@
+package thread.completableFuture;
+
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -15,7 +16,7 @@ public class CompletableFutureDelayerTest {
         CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
             try {
                 Thread.sleep(5000L);
-                System.out.println("我还活着");
+                log.info("我还活着");
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

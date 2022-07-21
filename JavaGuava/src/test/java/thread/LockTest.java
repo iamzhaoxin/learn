@@ -12,7 +12,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * TODO 不熟
  * ReentrantLock 可重入锁
  * ReadWriteLock 读写锁（可同时读）
  *

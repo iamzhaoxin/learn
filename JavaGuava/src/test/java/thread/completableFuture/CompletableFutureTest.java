@@ -1,4 +1,4 @@
-package thread;
+package thread.completableFuture;
 
 import com.google.common.base.Stopwatch;
 import lombok.extern.slf4j.Slf4j;
@@ -13,6 +13,10 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.function.Supplier;
 
 /**
+ * CompletionStage，代表异步计算过程中的某一个阶段，一个阶段完成以后可能会触发另外一个阶段
+ *  - 一个阶段的计算执行可以是一个Function，Consumer或者Runnable
+ * CompletableFuture，它实现了Future 与 CompletionStage，原理:内部通过阻塞队列+FutureTask，实现了任务先完成可优先获取到
+ *
  * @author xzhao9
  * @since 2022-07-19 16:31
  **/
@@ -110,6 +114,7 @@ public class CompletableFutureTest {
         CompletableFuture<String> cf2 = cf.thenApply(result -> "then" + result);
         Stopwatch stopwatch = Stopwatch.createStarted();
         log.info("run result: {}", cf2.get());
+        log.info("run result: {}", cf.get());
         stopwatch.stop();
         log.info("use time: {}", stopwatch);
     }
