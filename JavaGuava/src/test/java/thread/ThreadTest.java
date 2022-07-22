@@ -1,14 +1,21 @@
 package thread;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Range;
+import com.google.common.primitives.Ints;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import sun.nio.ch.ThreadPool;
 
 import java.util.LinkedList;
 import java.util.concurrent.*;
+import java.util.stream.IntStream;
 
 /**
+ * 异常处理
+ * submit()执行出现异常时，异常信息存储在返回future对象里，只有get的时候，才会出现异常信息，并且异常会阻塞线程。
+ * execute会直接打印异常信息，但不会给其他线程造成影响
+ *
  * .setDaemon
  * .join
  * <p>
@@ -29,6 +36,70 @@ import java.util.concurrent.*;
  **/
 @Slf4j
 public class ThreadTest {
+
+    /**
+     * execute提交的任务出现异常时，线程抛出异常后退出。（本例中由线程池创建新的线程）
+     * 抛出的异常由ThreadGroup默认处理（向标准错误输出打印）
+     */
+    @Test
+    public void execute_UnCaughtExceptionHandlerTest() throws InterruptedException {
+        ExecutorService executorService = Executors.newFixedThreadPool(1,
+                //可以用new ThreadFactoryBuilder().setNameFormat("test %d").build()新建线程工厂
+                new ThreadFactoryBuilder().setNameFormat("test %d").build());
+        //IntStream.rangeClosed(1,10).forEach()
+        IntStream.rangeClosed(1, 10).forEachOrdered(i -> executorService.execute(() -> {
+            if (Lists.newArrayList(3, 5, 7).contains(i)) {
+                throw new RuntimeException("error test");
+            }
+            log.info("doing {}", i);
+        }));
+        executorService.shutdown();
+        executorService.awaitTermination(1, TimeUnit.HOURS);
+    }
+    /**
+     * 异常处理
+     *  - 线程内部捕捉异常并处理
+     *  - 自定义线程池的未捕捉异常处理
+     *  - 设置全局默认的未捕捉异常处理
+     *  - 重写afterExecute
+     */
+    @Test
+    public void execute_UnCaughtExceptionHandlerTest2() throws InterruptedException {
+        ExecutorService executorService = Executors.newFixedThreadPool(1,
+                new ThreadFactoryBuilder()
+                        .setNameFormat("test %d")
+                        .setUncaughtExceptionHandler((thread, throwable) -> {
+                            log.error("Thread [{}] get exception", thread.getName(), throwable);
+                        }).build());
+
+        IntStream.rangeClosed(1, 10).forEachOrdered(i -> executorService.execute(() -> {
+            if (Lists.newArrayList(3, 5, 7).contains(i)) {
+                throw new RuntimeException("error test");
+            }
+            log.info("doing {}", i);
+        }));
+        executorService.shutdown();
+        executorService.awaitTermination(1, TimeUnit.HOURS);
+    }
+    // 全局默认的 未捕捉异常处理
+    static {
+        Thread.setDefaultUncaughtExceptionHandler((thread, throwable) -> {
+            log.error("Thread [{}] get exception", thread, throwable);
+        });
+    }
+
+    /**
+     * submit提交的时候，runnable对象被封装成了future ，
+     * future 里面的 run方法在处理异常时， try-catch了所有的异常，通过setException(ex);方法设置到了变量outcome里面，
+     * 可以通过future.get()调用report()获取到outcome。
+     */
+    @Test
+    public void submit_ExceptionallyTest(){
+        /*
+        - 通过get
+        - 重写afterExecute，在afterExecute里get
+         */
+    }
 
     /**
      * setDaemon(true) 主线程结束时，子线程也结束
@@ -96,7 +167,7 @@ public class ThreadTest {
      * 非阻塞状态下的线程，被调用interrupt方法后，中断标志位是true，但不会主动结束线程，需要主动检查并处理
      */
     @Test
-    public void breadThreadTest() throws InterruptedException {
+    public void interruptThreadTest() throws InterruptedException {
         Thread thread = new Thread(() -> {
             while (true) {
                 // Thread.interrupted()方法来检查是否线程被中断，会获取线程的中断标志位后清除线程的中断标志位,将其置为false
@@ -144,12 +215,12 @@ public class ThreadTest {
 
     /**
      * Future接口的cancel()方法
-     *  - 任务已经完成 或 之前的已经被取消 或 由于其他原因不能被取消，
-     *      那么这个方法将会返回false并且这个任务不会被取消。
-     *  - 任务正在等待获取线程，取消任务
-     *  - 如果这个任务已经正在运行
-     *      - 参数为true，任务取消。
-     *      - 参数为false，任务不会被取消。
+     * - 任务已经完成 或 之前的已经被取消 或 由于其他原因不能被取消，
+     * 那么这个方法将会返回false并且这个任务不会被取消。
+     * - 任务正在等待获取线程，取消任务
+     * - 如果这个任务已经正在运行
+     * - 参数为true，任务取消。
+     * - 参数为false，任务不会被取消。
      */
     @Test
     public void futureCancelTest() throws ExecutionException, InterruptedException {
@@ -172,7 +243,7 @@ public class ThreadTest {
     }
 
     @Test
-    public void futureCancelTest2(){
+    public void futureCancelTest2() {
         CompletableFuture<String> alive = CompletableFuture.supplyAsync(() -> {
             try {
                 Thread.sleep(2000);
@@ -191,7 +262,7 @@ public class ThreadTest {
         try {
             alive.get();
         } catch (Exception e) {
-            log.error("{}",e.getClass());
+            log.error("{}", e.getClass());
         }
     }
 
@@ -219,6 +290,7 @@ public class ThreadTest {
          */
         LinkedList<Integer> result = Lists.newLinkedList();
         class A implements Runnable {
+
             final LinkedList<Integer> result;
 
             public A(LinkedList<Integer> result) {
