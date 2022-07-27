@@ -45,8 +45,11 @@ public class CacheTest {
                         return fetchFromDB(key);
                     }
                 });
-        loadingCache.get("aaa");
+        System.out.println(loadingCache.get("aaa"));
         loadingCache.put("bbb",new Object());
+        loadingCache.put("ccc","value2");
+        System.out.println(loadingCache.get("bbb"));
+        System.out.println(loadingCache.get("ccc"));
     }
 
     private static Object fetchFromDB(String key) {
