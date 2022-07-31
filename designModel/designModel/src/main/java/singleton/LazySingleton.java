@@ -1,6 +1,8 @@
 package singleton;
 
 /**
+ * 1. 懒汉模式
+ *
  * volatile
  *  - 没有原子性，所以不能 i++操作，但可以=true/false
  *  - 可见性： 多个线程可见
