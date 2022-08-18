@@ -3,6 +3,8 @@ package singleton;
 /**
  * 2. 饿汉模式
  * 类加载的“初始化”阶段完成实例的初始化。借助jvm类加载机制保证实例的唯一
+ * 1. 静态变量
+ * 2. 静态代码块
  * 类加载过程：
  * 1. 加载二进制到内存，生成class
  * 2. 连接：验证、准备（给静态成员变量赋默认值）、解析
@@ -18,11 +20,21 @@ package singleton;
 
 public class HungrySingleton {
     private static final HungrySingleton instance = new HungrySingleton();
-
     private HungrySingleton() {
     }
-
     public HungrySingleton getInstance() {
+        return instance;
+    }
+}
+
+class HungrySingleton2{
+    private static final HungrySingleton2 instance;
+    private HungrySingleton2() {
+    }
+    static {
+        instance=new HungrySingleton2();
+    }
+    public HungrySingleton2 getInstance() {
         return instance;
     }
 }

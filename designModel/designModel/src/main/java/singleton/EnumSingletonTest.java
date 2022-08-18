@@ -27,9 +27,9 @@ enum EnumSingleton{
     // EnumSingleton对象
     INSTANCE;
     // 可以有私有属性
-    private String privateProperty;
+    private final String privateProperty;
     //可以有公有属性
-    public String publicProperty;
+    public final String publicProperty;
     // 方法
     public void method(){
         System.out.println("any method");
